@@ -33,12 +33,57 @@
 <body>
   <!-- Navigation Bar -->
   <header>
-
+    <div>
+      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <!-- Logo and Brand -->
+          <a class="navbar-brand" href="index.html" aria-label="Home page">
+            <img src="assets/images/" alt="Logo" width="30" height="30" class="d-inline-block align-text-top" />
+            Bernie Mac Games
+          </a>
+          <!-- Toggle Button -->
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <!-- Navbar Links -->
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <!-- Home -->
+              <li class="nav-item">
+                <a class="nav-link" href="index.html" aria-label="Home page"><i class="fa-solid fa-house"></i> Home</a>
+              </li>
+              <!-- Projects -->
+              <li class="nav-item">
+                <a class="nav-link" href="games.html" aria-label="Games page"> Games</a>
+              </li>
+              <!-- Contact -->
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="suggestion-form.html" aria-label="Suggestion page">
+                  Suggestions</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
   </header>
 
   <!-- Main Section -->
   <main>
-
+    <section class="form-section">
+      <form class="suggestion-form" action="response.html" method="GET">
+        <h2>Suggest a new game! </h2>
+        <!-- Email -->
+        <label for="email">Email Address</label>
+        <input class="text-input" type="email" id="email" name="email_address" required />
+        <!-- Message -->
+        <label for="message">Please tell us what game you would like to see added </label>
+        <input class="text-input" type="text" id="message" name="message" required />
+        <!-- Submit Button -->
+        <input class="submit-button" type="submit" value="Submit!" />
+      </form>
+    </section>
   </main>
   <!-- Footer -->
   <footer>
