@@ -12,6 +12,16 @@
   --alternate-bg: linear-gradient(to top left, , );
 }
 
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+footer {
+  margin-top: auto;
+}
+
 @media (max-width: 576px) {}
 
 @media (max-width: 768px) {}
