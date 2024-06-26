@@ -73,14 +73,67 @@
 
     <!-- Main Section -->
     <main>
+        <div id="carouselExampleDark" class="carousel carousel-dark slide">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active" data-bs-interval="10000">
+                    <img src="..." class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Noughts & Crosses</h5>
+                        <button>
+                            <a class="nav-link" href="" aria-label="Play Noughts & Crosses"><i
+                                    class="fa-solid fa-at"></i>
+                                Play</a>
+                        </button>
 
+                    </div>
+                </div>
+                <div class="carousel-item" data-bs-interval="2000">
+                    <img src="..." class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Unamed Game 1</h5>
+                        <button>
+                            <a class="nav-link" href="" aria-label="Play Game 2"><i class="fa-solid fa-at"></i>
+                                Play</a>
+                        </button>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="..." class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Unamed Game 2</h5>
+                        <button>
+                            <a class="nav-link" href="" aria-label="Play Game 3"><i class="fa-solid fa-at"></i>
+                                Play</a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
     </main>
     <!-- Footer -->
     <footer>
         <!-- Grid container -->
-        <div id="Footer-container" class="container p-1">
+        <div id="footer-container" class="container p-1">
             <!-- Section: Social media -->
-            <section id="social-links" class="mb-0">
+            <section id="social-links" class="mb-0 ">
                 <!-- Facebook -->
                 <a data-mdb-ripple-init class="btn btn-outline btn-floating m-1" id="facebook"
                     href="https://facebook.com" target="_blank" aria-label="Click here to go to Facebook"
@@ -96,7 +149,7 @@
             </section>
         </div>
         <!-- Copyright -->
-        <div class="text-center p-1" style="background-color: rgba(0, 0, 0, 0.05)">
+        <div class="text-center p-1">
             © 2024 BernieMacGames All rights reserved.
         </div>
     </footer>
