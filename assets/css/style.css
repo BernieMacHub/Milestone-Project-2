@@ -1,0 +1,21 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+
+:root {
+  --bg-primary: ;
+  --bg-secondary: ;
+  --bg-alternate: ;
+  --txt-primary: ;
+  --txt-secondary: ;
+  --txt-alternate: ;
+  --container-bg: linear-gradient(to bottom right, , );
+  --container-bgr: linear-gradient(to top left, , );
+  --alternate-bg: linear-gradient(to top left, , );
+}
+
+@media (max-width: 576px) {}
+
+@media (max-width: 768px) {}
+
+@media (max-width: 1200px) {}
+
+@media (min-width: 1200px) {}
