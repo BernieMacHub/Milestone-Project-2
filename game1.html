@@ -74,18 +74,36 @@
     <!-- Main Section -->
     <main>
         <div>
-            <h1>Title</h1>
-            <div>Player Scores</div>
-        </div>
-        <div>
-            <h2>Title</h2>
-            <div>
-                Game Board
+            <h1>Noughts & Crosses</h1>
+            <div class="scores">
+                <div id="XScore"> Player X: 0</div>
+                <div id="XScore"> Player O: 0</div>
+                <div id="Draw"> Draw: 0</div>
             </div>
         </div>
         <div>
-            <h2>Title</h2>
-            <p>Information on how to play the game</p>
+            <div>
+                <div class="grid-square" data-grid></div>
+                <div class="grid-square" data-grid></div>
+                <div class="grid-square" data-grid></div>
+                <div class="grid-square" data-grid></div>
+                <div class="grid-square" data-grid></div>
+                <div class="grid-square" data-grid></div>
+                <div class="grid-square" data-grid></div>
+                <div class="grid-square" data-grid></div>
+                <div class="grid-square" data-grid></div>
+            </div>
+        </div>
+        <div>
+            <h2>How to Play</h2>
+            <p>Two players take turn marking the board with either X or O markers in an attempt to line up 3 markers of
+                your own horizonally, vertically and diagonally.</p>
+            <ul>
+                <li>The player who lines up the first 3 markers wins the round, players can restart the game and tally
+                    the scores for multiple rounds.</li>
+                <li>If all grids on the board are filled with neither player managing to line up 3 markers, the game
+                    will result in a draw and also be added to the tally.</li>
+            </ul>
         </div>
     </main>
     <!-- Main Section -->

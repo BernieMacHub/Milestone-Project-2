@@ -18,6 +18,34 @@ body {
   flex-direction: column;
 }
 
+.suggestion-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carouselDark {
+  height: 800px;
+  background-color: red !important;
+}
+
+.carousel-item {
+  height: 800px;
+  background-color: red !important;
+}
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 footer {
   margin-top: auto;
 }
