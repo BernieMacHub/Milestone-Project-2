@@ -45,11 +45,18 @@ function startGame() {
 
 }
 
+// Function to handle click events on grids
 function handleClick() {
 
 }
 
+// Function to end the game
 function endGame() {
+
+}
+
+// Function to place a mark on the cell
+function placeMark() {
 
 }
 
