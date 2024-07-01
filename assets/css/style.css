@@ -19,7 +19,7 @@
   --alternate-bg: linear-gradient(to top left, , );
   /* Defining root variables for cell and mark sizes */
   --cell-size: 100px;
-  --mark-size: calc(var(--cell-size) * .9);
+  --marker-size: calc(var(--cell-size) * .9);
 }
 
 body {
@@ -125,6 +125,44 @@ footer {
   background-color: grey;
 }
 
+/*Defining X mark styles*/
+.grid-square.x::before,
+.grid-square.x::after,
+.board.x .grid-square:not(.x):not(.circle):hover::before,
+.board.x .grid-square:not(.x):not(.circle):hover::after {
+  content: '';
+}
+
+.grid-square.x::before,
+.board.x .grid-square:not(.x):not(.circle):hover::before {
+  transform: rotate(45deg);
+}
+
+.grid-square.x::after,
+.board.x .grid-square:not(.x):not(.circle):hover::after {
+  transform: rotate(-45deg);
+}
+
+/* Defining O mark styles */
+.grid-square.cirle::before,
+.grid-square.cirle::after,
+.board.circle .grid-square:not(.x):not(.circle):hover::before,
+.board.circle .grid-square:not(.x):not(.circle):hover::after {
+  content: '';
+}
+
+.grid-square.circle::before,
+.board.circle .grid-square:not(.x):not(.circle):hover::before {
+  width: var(--marker-size);
+  height: var(--marker-size);
+}
+
+.grid-square.circle::after,
+.board.circle .grid-square:not(.x):not(.circle):hover::after {
+  width: calc(var(--marker-size) * .7);
+  height: calc(var(--marker-size) * .7);
+  background-color: lightgray;
+}
 
 @media (max-width: 576px) {}
 
