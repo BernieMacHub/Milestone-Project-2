@@ -42,7 +42,17 @@ restartButton.addEventListener('click', startGame);
 
 // Function to start the game
 function startGame() {
-
+    circleTurn = false;
+    grids.forEach(cell => {
+        // Remove existing class already marked on the board
+        cell.classList.remove(X_CLASS, CIRCLE_CLASS);
+        // Remove Existing click listeners
+        cell.removeEventListener('click', handleClick);
+        // Adding a new click listener
+        cell.addEventListener('click', handleClick, {
+            once: true
+        });
+    });
 }
 
 // Function to handle click events on grids
