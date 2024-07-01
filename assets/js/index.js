@@ -46,7 +46,12 @@ function startGame() {
 }
 
 // Function to handle click events on grids
-function handleClick() {
+function handleClick(e) {
+    const cell = e.target;
+    // Determining the current class by current turn
+    const currentClass = circleTurn ? CIRCLE_CLASS : X_CLASS;
+    //Placing the marker on the grid
+    placeMark(cell, currentClass);
 
 }
 
@@ -62,7 +67,8 @@ function placeMark() {
 
 // Function to set the board hover class based on the turn
 function setBoardHoverClass() {
-
+    board.classList.remove(X_CLASS, CIRCLE_CLASS);
+    board.classList.add(circleTurn ? CIRCLE_CLASS : X_CLASS);
 }
 
 // Function to check if the current player has won
