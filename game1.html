@@ -23,8 +23,8 @@
     <script src="https://kit.fontawesome.com/faddffa861.js" crossorigin="anonymous"></script>
 
     <!-- Google Fonts -->
-    <!-- <link rel="preconnect" href="https://fonts.googleapis.com" /> -->
-    <!-- <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet" /> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet" />
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
@@ -52,8 +52,7 @@
                         <ul class="navbar-nav ms-auto">
                             <!-- Home -->
                             <li class="nav-item">
-                                <a class="nav-link" href="index.html" aria-label="Home page"><i
-                                        class="fa-solid fa-house"></i> Home</a>
+                                <a class="nav-link" href="index.html" aria-label="Home page"> Home</a>
                             </li>
                             <!-- Games -->
                             <li class="nav-item">
@@ -73,43 +72,45 @@
 
     <!-- Main Section -->
     <main>
-        <div>
-            <h1>Noughts & Crosses</h1>
-            <div class="scores">
-                <div class="score" id="playerXScore">Player X: 0</div>
-                <div class="score" id="playerOScore">Player O: 0</div>
-                <div class="score" id="drawScore">Draw: 0</div>
+        <div class="game-container">
+            <h1 class="title">Noughts & Crosses</h1>
+            <div class="scoreboard">
+                <p id="playerXScore">Player X: 0</p>
+                <p id="playerOScore">Player O: 0</p>
+                <p id="drawScore">Draw: 0</p>
             </div>
             <div class="board" id="board">
-                <!-- Simplified cell creation -->
-                <div class="cell" data-cell></div>
-                <div class="cell" data-cell></div>
-                <div class="cell" data-cell></div>
-                <div class="cell" data-cell></div>
-                <div class="cell" data-cell></div>
-                <div class="cell" data-cell></div>
-                <div class="cell" data-cell></div>
-                <div class="cell" data-cell></div>
-                <div class="cell" data-cell></div>
-            </div>
-            <div class="rules">
-                <h2>How to Play</h2>
-                <p>Two players take turn marking the board with either X or O markers in an attempt to line up 3 markers
-                    of
-                    your own horizonally, vertically and diagonally.</p>
-                <ul>
-                    <li>The player who lines up the first 3 markers wins the round, players can restart the game and
-                        tally
-                        the scores for multiple rounds.</li>
-                    <li>If all grids on the board are filled with neither player managing to line up 3 markers, the game
-                        will result in a draw and also be added to the tally.</li>
-                </ul>
+                <div class="grid" data-grid></div>
+                <div class="grid" data-grid></div>
+                <div class="grid" data-grid></div>
+                <div class="grid" data-grid></div>
+                <div class="grid" data-grid></div>
+                <div class="grid" data-grid></div>
+                <div class="grid" data-grid></div>
+                <div class="grid" data-grid></div>
+                <div class="grid" data-grid></div>
             </div>
             <div class="winning-message" id="winningMessage">
                 <div data-winning-message-text></div>
                 <button id="restartButton">Restart</button>
             </div>
+        </div>
+        <div class="rules">
+            <h2>How to Play</h2>
+            <h4>Two players take turn marking the board with either X or O markers in an attempt to line up 3 markers
+                of
+                your own horizonally, vertically and diagonally.</h4>
+            <ul>
+                <li>The player who succeeds in placing three respective marks in a horizontal, vertical, or diagonal
+                    row
+                    wins the game</li>
+                <li>When all nine squares are full, the game is over. If no player has three marks in a row, the game
+                    ends in a draw</li>
+                <li>The game will restart automatically after each game</li>
+            </ul>
+        </div>
     </main>
+
     <!-- Footer -->
     <footer>
         <!-- Grid container -->

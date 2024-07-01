@@ -15,9 +15,9 @@
   --container-bg: linear-gradient(to bottom right, , );
   --container-bgr: linear-gradient(to top left, , );
   --alternate-bg: linear-gradient(to top left, , );
-  /* Defining root variables for cell and mark sizes */
-  --cell-size: 100px;
-  --marker-size: calc(var(--cell-size) * 0.9);
+  /* Defining root variables for grid and mark sizes */
+  --grid-size: 100px;
+  --marker-size: calc(var(--grid-size) * 0.9);
 }
 
 body {
@@ -53,17 +53,31 @@ footer {
   margin-top: auto;
 }
 
-.container {
+#footer-container {
   display: flex;
   flex-direction: column;
   align-items: center;
+  /* Center the items vertically */
   justify-content: center;
-  height: 100vh;
+  /* Center the items horizontally */
+}
+
+#social-links {
+  display: flex;
+  justify-content: center;
+  /* Center the icons horizontally */
+  margin-bottom: 10px;
+  /* Add some spacing at the bottom if needed */
+}
+
+#social-links a {
+  margin: 0 5px;
+  /* Adjust spacing between the icons */
 }
 
 .board {
-  width: 100vw;
-  height: 100vh;
+  width: 50vw;
+  height: 35vh;
   display: grid;
   justify-content: center;
   align-content: center;
@@ -72,9 +86,9 @@ footer {
   grid-template-columns: repeat(3, auto)
 }
 
-.cell {
-  width: var(--cell-size);
-  height: var(--cell-size);
+.grid {
+  width: var(--grid-size);
+  height: var(--grid-size);
   border: 1px solid black;
   display: flex;
   justify-content: center;
@@ -83,80 +97,80 @@ footer {
   cursor: pointer;
 }
 
-.cell:first-child,
-.cell:nth-child(2),
-.cell:nth-child(3) {
+.grid:first-child,
+.grid:nth-child(2),
+.grid:nth-child(3) {
   border-top: none;
 }
 
-.cell:nth-child(3n + 1) {
+.grid:nth-child(3n + 1) {
   border-left: none;
 }
 
-.cell:nth-child(3n + 3) {
+.grid:nth-child(3n + 3) {
   border-right: none;
 }
 
-.cell:last-child,
-.cell:nth-child(8),
-.cell:nth-child(7) {
+.grid:last-child,
+.grid:nth-child(8),
+.grid:nth-child(7) {
   border-bottom: none;
 }
 
-.cell.x,
-.cell.circle {
+.grid.x,
+.grid.circle {
   cursor: not-allowed;
 }
 
-.cell.x::before,
-.cell.x::after,
-.cell.circle::before {
+.grid.x::before,
+.grid.x::after,
+.grid.circle::before {
   background-color: black;
 }
 
-.board.x .cell:not(.x):not(.circle):hover::before,
-.board.x .cell:not(.x):not(.circle):hover::after,
-.board.circle .cell:not(.x):not(.circle):hover::before {
+.board.x .grid:not(.x):not(.circle):hover::before,
+.board.x .grid:not(.x):not(.circle):hover::after,
+.board.circle .grid:not(.x):not(.circle):hover::before {
   background-color: lightgrey;
 }
 
-.cell.x::before,
-.cell.x::after,
-.board.x .cell:not(.x):not(.circle):hover::before,
-.board.x .cell:not(.x):not(.circle):hover::after {
+.grid.x::before,
+.grid.x::after,
+.board.x .grid:not(.x):not(.circle):hover::before,
+.board.x .grid:not(.x):not(.circle):hover::after {
   content: '';
   position: absolute;
   width: calc(var(--marker-size) * 0.15);
   height: var(--marker-size);
 }
 
-.cell.x::before,
-.board.x .cell:not(.x):not(.circle):hover::before {
+.grid.x::before,
+.board.x .grid:not(.x):not(.circle):hover::before {
   transform: rotate(45deg);
 }
 
-.cell.x::after,
-.board.x .cell:not(.x):not(.circle):hover::after {
+.grid.x::after,
+.board.x .grid:not(.x):not(.circle):hover::after {
   transform: rotate(-45deg);
 }
 
-.cell.circle::before,
-.cell.circle::after,
-.board.circle .cell:not(.x):not(.circle):hover::before,
-.board.circle .cell:not(.x):not(.circle):hover::after {
+.grid.circle::before,
+.grid.circle::after,
+.board.circle .grid:not(.x):not(.circle):hover::before,
+.board.circle .grid:not(.x):not(.circle):hover::after {
   content: '';
   position: absolute;
   border-radius: 50%;
 }
 
-.cell.circle::before,
-.board.circle .cell:not(.x):not(.circle):hover::before {
+.grid.circle::before,
+.board.circle .grid:not(.x):not(.circle):hover::before {
   width: var(--marker-size);
   height: var(--marker-size);
 }
 
-.cell.circle::after,
-.board.circle .cell:not(.x):not(.circle):hover::after {
+.grid.circle::after,
+.board.circle .grid:not(.x):not(.circle):hover::after {
   width: calc(var(--marker-size) * 0.7);
   height: calc(var(--marker-size) * 0.7);
   background-color: white;
@@ -195,13 +209,13 @@ footer {
   display: flex;
 }
 
-/* Main container */
-.container {
+/* Game container */
+.game-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  height: 60vh;
 }
 
 /* Title */
@@ -217,8 +231,8 @@ footer {
   grid-gap: 5px;
 }
 
-/* Cells */
-.cell {
+/* grids */
+.grid {
   width: 100px;
   height: 100px;
   background-color: #f0f0f0;
@@ -233,25 +247,138 @@ footer {
 /* Rules section */
 .rules {
   text-align: center;
-  margin-top: 20px;
 }
 
-/* Rules heading */
-.rules h2 {
-  font-size: 1.5em;
-  margin-bottom: 10px;
-}
-
-/* Rules list */
 .rules ul {
-  list-style-type: none;
-  padding: 0;
+  display: inline-block;
+  text-align: left;
+  padding-left: 0;
+  list-style-position: inside;
 }
 
-/* Rules list items */
-.rules li {
-  margin-bottom: 10px;
-  font-size: 1.2em;
+#games-page body {
+  padding: 0;
+  margin: 0;
+  background: radial-gradient(circle at top left, #161231, #161231);
+  font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  padding: 4rem;
+}
+
+#games-page #album-rotator {
+  width: 1000px;
+  float: left;
+  white-space: nowrap;
+  overflow: hidden;
+  position: relative;
+  word-break: keep-all;
+  padding: 2rem 0;
+}
+
+#games-page #album-rotator-holder {
+  position: relative;
+  user-select: none;
+  will-change: transform;
+  /* transition: all 0.01s ease-out; */
+  /* transition: all 0.01s linear; */
+}
+
+#games-page div#album-rotator-holder {}
+
+#games-page #album-rotator:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background: linear-gradient(-90deg, #161231 5%, transparent 40%);
+}
+
+#games-page .album-item {
+  word-break: keep-all;
+  background: black;
+  box-shadow: 0 2px 30px rgba(0, 0, 0, 0.5);
+  position: relative;
+  width: 250px;
+  -webkit-user-drag: none;
+  user-drag: none;
+  height: 300px;
+  user-select: none;
+  border-radius: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  display: inline-block;
+  margin: 0 3rem 0 0;
+  transition: all 0.2s ease-out;
+  transform: scale(1);
+}
+
+#games-page .album-item:hover {
+  transform: scale(1.02);
+}
+
+#games-page .album-details {
+  background: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  text-shadow: 0 2px 15px rgba(0, 0, 0, 0.5);
+  padding: 1rem;
+  white-space: initial;
+  float: left;
+  box-sizing: border-box;
+  color: white;
+  height: 100%;
+  font-size: 2.5rem;
+  font-weight: 600;
+  z-index: 99;
+}
+
+#games-page .title {
+  font-weight: 900;
+  display: inline-block;
+  width: 100%;
+}
+
+#games-page .subtitle {
+  font-weight: 100;
+  line-height: 1.25rem;
+}
+
+#games-page .subtext {
+  font-size: 1.1167rem;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 1.25rem 1rem;
+  width: 100%;
+  white-space: initial;
+  letter-spacing: 0;
+  box-sizing: border-box;
+  font-weight: 400;
+}
+
+#games-page .icon {
+  font-size: 1rem;
+  line-height: 1rem;
+  display: block;
+  padding: 0 0 0.5rem 0;
+}
+
+#games-page canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#games-page h1 {
+  font-size: 2.5rem;
+  color: white;
+  margin: 0;
+  font-weight: 600;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
 /* @media (max-width: 576px) {}
