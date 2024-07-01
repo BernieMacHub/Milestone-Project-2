@@ -131,6 +131,9 @@ footer {
 .board.x .grid-square:not(.x):not(.circle):hover::before,
 .board.x .grid-square:not(.x):not(.circle):hover::after {
   content: '';
+  position: absolute;
+  width: calc(var(--mark-size) * .15);
+  height: var(--mark-size);
 }
 
 .grid-square.x::before,
@@ -149,6 +152,8 @@ footer {
 .board.circle .grid-square:not(.x):not(.circle):hover::before,
 .board.circle .grid-square:not(.x):not(.circle):hover::after {
   content: '';
+  position: absolute;
+  border-radius: 50%;
 }
 
 .grid-square.circle::before,
@@ -162,6 +167,26 @@ footer {
   width: calc(var(--marker-size) * .7);
   height: calc(var(--marker-size) * .7);
   background-color: lightgray;
+}
+
+/* Game board */
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-gap: 5px;
+}
+
+/* Cells */
+.grid-square {
+  width: 100px;
+  height: 100px;
+  background-color: #f0f0f0;
+  border: 2px solid #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2em;
+  cursor: pointer;
 }
 
 @media (max-width: 576px) {}

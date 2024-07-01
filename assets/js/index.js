@@ -43,13 +43,13 @@ restartButton.addEventListener('click', startGame);
 // Function to start the game
 function startGame() {
     circleTurn = false;
-    grids.forEach(cell => {
+    grids.forEach(grid => {
         // Remove existing class already marked on the board
-        cell.classList.remove(X_CLASS, CIRCLE_CLASS);
+        grid.classList.remove(X_CLASS, CIRCLE_CLASS);
         // Remove Existing click listeners
-        cell.removeEventListener('click', handleClick);
+        grid.removeEventListener('click', handleClick);
         // Adding a new click listener
-        cell.addEventListener('click', handleClick, {
+        grid.addEventListener('click', handleClick, {
             once: true
         });
     });
@@ -57,11 +57,11 @@ function startGame() {
 
 // Function to handle click events on grids
 function handleClick(e) {
-    const cell = e.target;
+    const grid = e.target;
     // Determining the current class by current turn
     const currentClass = circleTurn ? CIRCLE_CLASS : X_CLASS;
     //Placing the marker on the grid
-    placeMark(cell, currentClass);
+    placeMark(grid, currentClass);
 
 }
 
@@ -70,9 +70,9 @@ function endGame() {
 
 }
 
-// Function to place a mark on the cell
-function placeMark(cell, currentClass) {
-    cell.classList.add(currentClass);
+// Function to place a mark on the grid
+function placeMark(grid, currentClass) {
+    grid.classList.add(currentClass);
 }
 
 // Function to set the board hover class based on the turn
