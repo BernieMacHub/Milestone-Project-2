@@ -61,8 +61,8 @@ function endGame() {
 }
 
 // Function to place a mark on the cell
-function placeMark() {
-
+function placeMark(cell, currentClass) {
+    cell.classList.add(currentClass);
 }
 
 // Function to set the board hover class based on the turn
