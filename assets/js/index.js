@@ -4,84 +4,140 @@ const CIRCLE_CLASS = 'circle';
 
 // Winning combinations as an array of arrays
 const WINNING_COMBINATIONS = [
-    [0, 1, 2], // Row
-    [3, 4, 5], // Row
-    [6, 7, 8], // Row
-    [0, 3, 6], // Column
-    [1, 4, 7], // Column
-    [2, 5, 8], // Column
-    [0, 4, 8], // Diagonal
-    [2, 4, 6] // Diagonal
+    [0, 1, 2],
+    [3, 4, 5],
+    [6, 7, 8],
+    [0, 3, 6],
+    [1, 4, 7],
+    [2, 5, 8],
+    [0, 4, 8],
+    [2, 4, 6]
 ];
 
-// Creating variables for the grids, the board and the winning message
-const grids = document.querySelectorAll('[data-grid]');
+// Selecting all the grids, board, and the winning message elements
+const cells = document.querySelectorAll('[data-cell]');
 const board = document.getElementById('board');
-const winningMessage = document.getElementById('winningMessage');
+const winningMessageElement = document.getElementById('winningMessage');
 const restartButton = document.getElementById('restartButton');
-const winningMessageText = document.querySelector('[data-winning-message-text')
+const winningMessageTextElement = document.querySelector('[data-winning-message-text]');
 
 // Selecting the score elements
-const XScoreElement = document.getElementById('XScore');
-const OScoreElement = document.getElementById('OScore');
-const DrawElement = document.getElementById('Draw');
+const playerXScoreElement = document.getElementById('playerXScore');
+const playerOScoreElement = document.getElementById('playerOScore');
+const drawScoreElement = document.getElementById('drawScore');
 
-// Variables to keep track of the player scores
+// Variables to keep track of turns and scores
 let circleTurn;
-let XScore = 0;
-let OScore = 0;
-let draw = 0;
+let playerXScore = 0;
+let playerOScore = 0;
+let drawScore = 0;
 
 // Initializing the game
 startGame();
 
-// Event listener for the restart button
+// Adding an event listener for the restart button
 restartButton.addEventListener('click', startGame);
-
-// Functions
 
 // Function to start the game
 function startGame() {
     circleTurn = false;
-    grids.forEach(grid => {
+    cells.forEach(cell => {
         // Remove existing class already marked on the board
-        grid.classList.remove(X_CLASS, CIRCLE_CLASS);
-        // Remove Existing click listeners
-        grid.removeEventListener('click', handleClick);
+        cell.classList.remove(X_CLASS, CIRCLE_CLASS);
+        // Remove existing click listeners
+        cell.removeEventListener('click', handleClick);
         // Adding a new click listener
-        grid.addEventListener('click', handleClick, {
+        cell.addEventListener('click', handleClick, {
             once: true
         });
     });
+    // Setting the initial board hover class
+    setBoardHoverClass();
+    // Hiding the winning message
+    winningMessageElement.classList.remove('show');
 }
 
 // Function to handle click events on grids
 function handleClick(e) {
-    const grid = e.target;
-    // Determining the current class by current turn
+    const cell = e.target;
+    // Determining the current class (X or O) based on the turn
     const currentClass = circleTurn ? CIRCLE_CLASS : X_CLASS;
-    //Placing the marker on the grid
-    placeMark(grid, currentClass);
-
+    // Placing the mark on the clicked cell
+    placeMark(cell, currentClass);
+    // Checking if the current move results in a win
+    if (checkWin(currentClass)) {
+        endGame(false);
+        updateScore(currentClass);
+    }
+    // Checking if the game is a draw
+    else if (isDraw()) {
+        endGame(true);
+        updateScore('draw');
+    }
+    // Switching turns and updating the board hover class
+    else {
+        swapTurns();
+        setBoardHoverClass();
+    }
 }
 
 // Function to end the game
-function endGame() {
-
+function endGame(draw) {
+    if (draw) {
+        winningMessageTextElement.innerText = 'Draw!';
+    } else {
+        winningMessageTextElement.innerText = `${circleTurn ? "O's" : "X's"} Wins!`;
+    }
+    winningMessageElement.classList.add('show');
 }
 
-// Function to place a mark on the grid
-function placeMark(grid, currentClass) {
-    grid.classList.add(currentClass);
+// Function to update the score
+function updateScore(winner) {
+    if (winner === X_CLASS) {
+        playerXScore++;
+        playerXScoreElement.innerText = playerXScore;
+    } else if (winner === CIRCLE_CLASS) {
+        playerOScore++;
+        playerOScoreElement.innerText = playerOScore;
+    } else if (winner === 'draw') {
+        drawScore++;
+        drawScoreElement.innerText = drawScore;
+    }
 }
 
-// Function to set the board hover class based on the turn
+// Function to check for a draw
+function isDraw() {
+    return [...cells].every(cell => {
+        return cell.classList.contains(X_CLASS) ||
+            cell.classList.contains(CIRCLE_CLASS);
+    });
+}
+
+// Function to place the mark on a cell
+function placeMark(cell, currentClass) {
+    cell.classList.add(currentClass);
+}
+
+// Function to swap turns
+function swapTurns() {
+    circleTurn = !circleTurn;
+}
+
+// Function to set the board hover class
 function setBoardHoverClass() {
     board.classList.remove(X_CLASS, CIRCLE_CLASS);
-    board.classList.add(circleTurn ? CIRCLE_CLASS : X_CLASS);
+    if (circleTurn) {
+        board.classList.add(CIRCLE_CLASS);
+    } else {
+        board.classList.add(X_CLASS);
+    }
 }
 
-// Function to check if the current player has won
-function checkWin() {
-
+// Function to check for a win
+function checkWin(currentClass) {
+    return WINNING_COMBINATIONS.some(combination => {
+        return combination.every(index => {
+            return cells[index].classList.contains(currentClass);
+        });
+    });
 }
