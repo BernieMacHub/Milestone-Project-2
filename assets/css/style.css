@@ -75,6 +75,9 @@ footer {
   /* Adjust spacing between the icons */
 }
 
+
+/* Game 1 */
+
 .board {
   width: 50vw;
   height: 35vh;
@@ -248,6 +251,9 @@ footer {
 .rules {
   text-align: center;
 }
+
+
+/* Game 2 */
 
 game2.html main {
   display: flex;
