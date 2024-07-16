@@ -249,11 +249,37 @@ footer {
   text-align: center;
 }
 
-.rules ul {
-  display: inline-block;
-  text-align: left;
-  padding-left: 0;
-  list-style-position: inside;
+game2.html main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+#game2 {
+  display: flex;
+  justify-content: center;
+}
+
+.game-two-container {
+  position: relative;
+  left: 300px;
+  display: grid;
+  width: 600px;
+  grid-template-columns: repeat(10, 1fr);
+}
+
+.game-two-container div {
+  width: 60px;
+  height: 60px;
+  border: none;
+}
+
+#snakes-and-ladders-board {
+  position: relative;
+  left: -300px;
+  width: 615px;
+  height: 615px;
 }
 
 
