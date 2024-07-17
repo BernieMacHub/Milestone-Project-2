@@ -78,3 +78,19 @@ function handleSnakesAndLadders(position) {
     };
     return ladders[position] || snakes[position] || position;
 }
+
+// Event listener for dice roll button
+document.getElementById("diceBtn").addEventListener("click", function () {
+    let num = Math.floor(Math.random() * 6) + 1; // Roll a dice (1-6)
+    document.getElementById("dice").innerText = num; // Update dice value
+
+    if (tog % 2 !== 0) {
+        document.getElementById('tog').innerText = "Red's Turn : ";
+        play('p1', 'p1sum', 0, num);
+    } else {
+        document.getElementById('tog').innerText = "Yellow's Turn : ";
+        play('p2', 'p2sum', 0, num);
+    }
+
+    tog++;
+});
