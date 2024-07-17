@@ -1,146 +1,141 @@
-// Constants for player tokens
-const PLAYER_1 = 'p1';
-const PLAYER_2 = 'p2';
-
-// Audio elements for dice rolling and winning
-const rollingSound = new Audio('rpg-dice-rolling-95182.mp3');
-const winSound = new Audio('winharpsichord-39642.mp3');
-
-// Initial positions and scores for players
-let p1Position = 0;
-let p2Position = 0;
+let tog = 1;
+let p1sum = 0;
+let p2sum = 0;
 let p1Score = 0;
 let p2Score = 0;
-let drawScore = 0;
 
-// Variable to keep track of turns
-let isPlayer1Turn = true;
+const winningMessageElement = document.getElementById('winningMessageTwo');
+const restartButton = document.getElementById('restartButtonTwo');
+const winningMessageTextElement = document.querySelector('[data-winning-message-text-two]');
 
-// Special positions (snakes and ladders)
-const specialPositions = {
-    1: 38,
-    4: 14,
-    8: 30,
-    21: 42,
-    28: 76,
-    32: 10,
-    36: 6,
-    48: 26,
-    50: 67,
-    62: 18,
-    71: 92,
-    80: 99,
-    88: 24,
-    95: 56,
-    97: 78
-};
-
-// Starting the game
-startGame();
-
-// Adding an event listener for the dice button
-document.getElementById("dice").addEventListener("click", rollDice);
-
-// Function to start the game
-function startGame() {
-    p1Position = 0;
-    p2Position = 0;
-    isPlayer1Turn = true;
-    updateBoardHoverClass();
-}
-
-// Function to get the new position of the player
-function getPosition(playerPosition, roll) {
-    let newPosition = playerPosition + roll;
-    if (newPosition > 100) {
-        return playerPosition;
+// Function to play the game for a player
+function play(player, psum, correction, num) {
+    let sum;
+    if (psum === 'p1sum') {
+        p1sum += num;
+        if (p1sum > 100) p1sum -= num;
+        p1sum = handleSnakesAndLadders(p1sum);
+        sum = p1sum;
+    } else if (psum === 'p2sum') {
+        p2sum += num;
+        if (p2sum > 100) p2sum -= num;
+        p2sum = handleSnakesAndLadders(p2sum);
+        sum = p2sum;
     }
-    return specialPositions[newPosition] || newPosition;
+
+    // Move the player marker
+    movePlayer(player, sum, correction);
+
+    // Check if the player has won
+    if (sum === 100) {
+        endGame(player);
+    }
 }
 
-// Function to move the player on the board
+// Function to handle movement of player marker
 function movePlayer(player, position, correction) {
-    const {
-        x,
-        y
-    } = calculatePosition(position, correction);
-    const playerElem = document.getElementById(player);
-    playerElem.style.transition = `linear all .5s`;
-    playerElem.style.left = `${x}px`;
-    playerElem.style.top = `${y}px`;
-}
+    const gridWidth = 60; // Adjust based on actual width
+    const gridHeight = 60; // Adjust based on actual height
+    document.getElementById(player).style.transition = 'all 0.5s linear';
 
-// Function to calculate the player's position on the board
-function calculatePosition(position, correction) {
-    let x, y;
     if (position < 10) {
-        x = (position - 1) * 62;
-        y = -0 * 62 - correction;
+        document.getElementById(player).style.left = `${(position - 1) * gridWidth}px`;
+        document.getElementById(player).style.top = `${-0 * gridHeight - correction}px`;
     } else {
-        const [n1, n2] = String(position).split('').map(Number);
-        if (n1 % 2 !== 0) {
-            x = (n2 === 0 ? 9 : 9 - (n2 - 1)) * 62;
+        let column = position % 10;
+        let row = Math.floor(position / 10);
+
+        if (column === 0) {
+            document.getElementById(player).style.left = `${(row % 2 === 0 ? 0 : 9) * gridWidth}px`;
+            document.getElementById(player).style.top = `${-(position / 10 - 1) * gridHeight - correction}px`;
         } else {
-            x = (n2 === 0 ? 0 : n2 - 1) * 62;
+            document.getElementById(player).style.left = `${row % 2 === 0 ? (column - 1) * gridWidth : (10 - column) * gridWidth}px`;
+            document.getElementById(player).style.top = `${-Math.floor(position / 10) * gridHeight - correction}px`;
         }
-        y = (-n1) * 62 - correction;
     }
-    return {
-        x,
-        y
+}
+
+// Function to handle snakes and ladders
+function handleSnakesAndLadders(position) {
+    const ladders = {
+        1: 38,
+        4: 14,
+        8: 30,
+        21: 42,
+        28: 76,
+        50: 67,
+        71: 92,
+        80: 99
     };
+    const snakes = {
+        32: 10,
+        36: 6,
+        48: 26,
+        62: 18,
+        88: 24,
+        95: 56,
+        97: 78
+    };
+    return ladders[position] || snakes[position] || position;
 }
 
-// Function to check if the player has won
-function checkWin(position) {
-    return position === 100;
-}
-
-// Function to end the game
-function endGame(player) {
-    winSound.play();
-    alert(`${player === PLAYER_1 ? 'Black' : 'Red'} Won!!`);
-    location.reload();
-}
-
-// Function to update the score
-function updateScore(player) {
-    if (player === PLAYER_1) {
+// Function to end the game and update scores
+function endGame(winner) {
+    if (winner === 'p1') {
         p1Score++;
-        document.getElementById('playerXScore').innerText = `Player X: ${p1Score}`;
+        document.getElementById('p1Score').innerText = `Player 1: ${p1Score}`;
+        winningMessageTextElement.innerText = 'Player 1 Wins!';
     } else {
         p2Score++;
-        document.getElementById('playerOScore').innerText = `Player O: ${p2Score}`;
+        document.getElementById('p2Score').innerText = `Player 2: ${p2Score}`;
+        winningMessageTextElement.innerText = 'Player 2 Wins!';
     }
+    winningMessageElement.classList.add('show');
 }
 
-// Function to roll the dice
-function rollDice() {
-    rollingSound.play();
-    const roll = Math.floor(Math.random() * 6) + 1;
-    document.getElementById("dice").innerText = roll;
-    if (isPlayer1Turn) {
-        p1Position = getPosition(p1Position, roll);
-        movePlayer(PLAYER_1, p1Position, 0);
-        if (checkWin(p1Position)) {
-            endGame(PLAYER_1);
-            updateScore(PLAYER_1);
-        }
+// Event listener for restart button in the overlay
+restartButton.addEventListener("click", function () {
+    // Hide the winning message
+    winningMessageElement.classList.remove('show');
+    // Reset game state by moving players back to start position
+    movePlayer('p1', p1sum = 0, 0); // Reset position for player 1
+    movePlayer('p2', p2sum = 0, 0); // Reset position for player 2
+    tog = 1;
+});
+
+// Event listener for dice roll button
+document.getElementById("diceBtn").addEventListener("click", function () {
+    let num = Math.floor(Math.random() * 6) + 1; // Roll a dice (1-6)
+    document.getElementById("dice").innerText = num; // Update dice value
+
+    if (tog % 2 !== 0) {
+        document.getElementById('tog').innerText = "Red's Turn : ";
+        play('p1', 'p1sum', 0, num);
     } else {
-        p2Position = getPosition(p2Position, roll);
-        movePlayer(PLAYER_2, p2Position, 55);
-        if (checkWin(p2Position)) {
-            endGame(PLAYER_2);
-            updateScore(PLAYER_2);
-        }
+        document.getElementById('tog').innerText = "Yellow's Turn : ";
+        play('p2', 'p2sum', 0, num);
     }
-    isPlayer1Turn = !isPlayer1Turn;
-    updateBoardHoverClass();
-}
 
-// Function to update the board hover class
-function updateBoardHoverClass() {
-    const board = document.getElementById('board');
-    board.classList.remove(PLAYER_1, PLAYER_2);
-    board.classList.add(isPlayer1Turn ? PLAYER_1 : PLAYER_2);
-}
+    tog++;
+});
+
+// // Event listener for restart button in the overlay
+// restartButton.addEventListener("click", function () {
+//     // Reset game state
+//     resetGame();
+//     // Hide the winning message
+//     winningMessageElement.classList.remove('show');
+// });
+
+// // Function to reset game state
+// function resetGame() {
+//     p1sum = 0;
+//     p2sum = 0;
+//     tog = 1;
+//     document.getElementById('tog').innerText = "Red's Turn : ";
+//     document.getElementById('p1Score').innerText = "Player 1: 0";
+//     document.getElementById('p2Score').innerText = "Player 2: 0";
+//     document.getElementById('dice').innerText = "0";
+//     movePlayer('p1', p1sum, 0);
+//     movePlayer('p2', p2sum, 0);
+// }

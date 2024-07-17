@@ -287,6 +287,82 @@ game2.html main {
   height: 615px;
 }
 
+#p1,
+#p2 {
+  width: 50px;
+  height: 50px;
+  border-radius: 100px;
+  background-color: rgb(236, 82, 82);
+  position: absolute;
+  /* Changed from relative to absolute */
+  border: 3px solid black;
+}
+
+#p1 {
+  top: 0px;
+  left: -62px;
+  z-index: 2;
+}
+
+#p2 {
+  top: 0px;
+  /* Added this line to start p2 at the same vertical level as p1 */
+  left: -62px;
+  z-index: 2;
+  background-color: rgb(243, 181, 46);
+}
+
+#dice-container {
+  display: grid;
+  place-items: center;
+  position: absolute;
+  top: 200px;
+  left: 120px;
+  font-size: 2rem;
+  z-index: 99;
+}
+
+#diceBtn {
+  z-index: 99;
+  padding: 5px;
+  cursor: pointer;
+  background-color: rgb(75, 140, 197);
+  border-radius: 5px;
+  width: 200px;
+}
+
+.winning-message-two {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 5rem;
+  flex-direction: column;
+}
+
+.winning-message-two button {
+  font-size: 3rem;
+  background-color: white;
+  border: 1px solid black;
+  padding: 0.25em 0.5em;
+  cursor: pointer;
+}
+
+.winning-message-two button:hover {
+  background-color: black;
+  color: white;
+  border-color: white;
+}
+
+.winning-message-two.show {
+  display: flex;
+}
 
 /* @media (max-width: 576px) {}
 
