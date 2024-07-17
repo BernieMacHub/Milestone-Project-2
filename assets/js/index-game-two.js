@@ -94,3 +94,27 @@ document.getElementById("diceBtn").addEventListener("click", function () {
 
     tog++;
 });
+
+// Function to end the game and update scores
+function endGame(winner) {
+    if (winner === 'p1') {
+        p1Score++;
+        document.getElementById('p1Score').innerText = `Player 1: ${p1Score}`;
+        winningMessageTextElement.innerText = 'Player 1 Wins!';
+    } else {
+        p2Score++;
+        document.getElementById('p2Score').innerText = `Player 2: ${p2Score}`;
+        winningMessageTextElement.innerText = 'Player 2 Wins!';
+    }
+    winningMessageElement.classList.add('show');
+}
+
+// Event listener for restart button in the overlay
+restartButton.addEventListener("click", function () {
+    // Hide the winning message
+    winningMessageElement.classList.remove('show');
+    // Reset game state by moving players back to start position
+    movePlayer('p1', p1sum = 0, 0); // Reset position for player 1
+    movePlayer('p2', p2sum = 0, 0); // Reset position for player 2
+    tog = 1;
+});
