@@ -394,10 +394,30 @@ game2.html main {
   height: 75px;
 }
 
-/* @media (max-width: 576px) {}
+.allImg {
+  width: 45px;
+  position: relative;
+  bottom: 5px;
+}
 
-@media (max-width: 768px) {}
+.allPawn {
+  transform: scale(.7);
+}
+
+@media (max-width: 576px) {}
+
+@media (max-width: 768px) {
+
+  .box {
+    width: 11vw;
+    height: 11vw;
+  }
+
+  .allImg {
+    width: 7vw;
+  }
+}
 
 @media (max-width: 1200px) {}
 
-@media (min-width: 1200px) {} */
+@media (min-width: 1200px) {}
