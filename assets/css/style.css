@@ -364,6 +364,36 @@ game2.html main {
   display: flex;
 }
 
+/* Game 3 */
+
+.game-three-container {
+  display: grid;
+  place-items: center;
+  overflow-x: hidden;
+}
+
+.chess-ul {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.rows {
+  display: flex;
+}
+
+.chess-ul li {
+  list-style: none;
+  display: grid;
+  place-items: center;
+  font-size: 0px;
+}
+
+.box {
+  margin: .5px;
+  width: 75px;
+  height: 75px;
+}
+
 /* @media (max-width: 576px) {}
 
 @media (max-width: 768px) {}
