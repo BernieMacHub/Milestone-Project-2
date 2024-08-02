@@ -15,12 +15,12 @@ function insertImage() {
 
         if (image.innerText.length !== 0) {
             if (image.innerText == 'Wpawn' || image.innerText == 'Bpawn') {
-                image.innerHTML = `${image.innerText} <img class='img class='allImg allPawn' src="assets/images/${image.innerText}.png" alt="">`
+                image.innerHTML = `${image.innerText} <img class='img class='all-img all-pawn' src="assets/images/${image.innerText}.png" alt="">`
                 image.style.cursor = 'pointer'
 
             } else {
 
-                image.innerHTML = `${image.innerText} <img class='allImg' src="assets/images/${image.innerText}.png" alt="">`
+                image.innerHTML = `${image.innerText} <img class='all-img' src="assets/images/${image.innerText}.png" alt="">`
                 image.style.cursor = 'pointer'
             }
         }
