@@ -8,14 +8,18 @@ const winningMessageElement = document.getElementById('winningMessageThree');
 const restartButton = document.getElementById('restartButtonThree');
 const winningMessageTextElement = document.querySelector('[data-winning-message-text-three]');
 
-// Inserting the Images
+
+/** 
+ * Inserting images to the chess board
+ */
+
 function insertImage() {
 
     document.querySelectorAll('.box').forEach(image => {
 
         if (image.innerText.length !== 0) {
             if (image.innerText == 'Wpawn' || image.innerText == 'Bpawn') {
-                image.innerHTML = `${image.innerText} <img class='img class='all-img all-pawn' src="assets/images/${image.innerText}.png" alt="">`
+                image.innerHTML = `${image.innerText} <img class='all-img all-pawn' src="assets/images/${image.innerText}.png" alt="">`
                 image.style.cursor = 'pointer'
 
             } else {
