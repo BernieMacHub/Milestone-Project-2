@@ -75,6 +75,15 @@ footer {
   /* Adjust spacing between the icons */
 }
 
+/* Rules section */
+.rules {
+  text-align: center;
+}
+
+.centered {
+  text-align: center;
+}
+
 /* Game 1 */
 
 .board {
@@ -124,16 +133,26 @@ footer {
   cursor: not-allowed;
 }
 
+/* Styles for X */
 .grid.x::before,
-.grid.x::after,
-.grid.circle::before {
-  background-color: black;
+.grid.x::after {
+  background-color: red; /* Color for X */
 }
 
+/* Styles for O */
+.grid.circle::before {
+  background-color: blue; /* Color for O */
+}
+
+/* Hover effect when the board is in X's turn */
 .board.x .grid:not(.x):not(.circle):hover::before,
-.board.x .grid:not(.x):not(.circle):hover::after,
+.board.x .grid:not(.x):not(.circle):hover::after {
+  background-color: pink;
+}
+
+/* Hover effect when the board is in O's turn */
 .board.circle .grid:not(.x):not(.circle):hover::before {
-  background-color: lightgrey;
+  background-color: lightblue;
 }
 
 .grid.x::before,
@@ -221,10 +240,10 @@ footer {
 }
 
 /* Title */
-.title {
+/* .title {
   font-size: 2em;
   margin-bottom: 20px;
-}
+} */
 
 /* Game board */
 .board {
@@ -245,12 +264,6 @@ footer {
   font-size: 2em;
   cursor: pointer;
 }
-
-/* Rules section */
-.rules {
-  text-align: center;
-}
-
 
 /* Game 2 */
 
@@ -292,7 +305,7 @@ game2.html main {
   width: 50px;
   height: 50px;
   border-radius: 100px;
-  background-color: rgb(236, 82, 82);
+  background-color: red;
   position: absolute;
   /* Changed from relative to absolute */
   border: 3px solid black;
@@ -307,9 +320,9 @@ game2.html main {
 #p2 {
   top: 0px;
   /* Added this line to start p2 at the same vertical level as p1 */
-  left: -62px;
+  left: -50px;
   z-index: 2;
-  background-color: rgb(243, 181, 46);
+  background-color: blue;
 }
 
 #dice-container {
@@ -326,7 +339,7 @@ game2.html main {
   z-index: 99;
   padding: 5px;
   cursor: pointer;
-  background-color: rgb(75, 140, 197);
+  background-color: red;
   border-radius: 5px;
   width: 200px;
 }

@@ -74,11 +74,6 @@
     <main>
         <div class="game-container">
             <h1 class="title">Noughts & Crosses</h1>
-            <div class="scoreboard">
-                <p id="playerXScore">Player X: 0</p>
-                <p id="playerOScore">Player O: 0</p>
-                <p id="drawScore">Draw: 0</p>
-            </div>
             <div class="board" id="board">
                 <div class="grid" data-grid></div>
                 <div class="grid" data-grid></div>
@@ -92,11 +87,11 @@
             </div>
             <div class="winning-message" id="winningMessage">
                 <div data-winning-message-text></div>
-                <button id="restartButton">Restart</button>
+                <button id="restartButton">Click here to play another Round!</button>
             </div>
         </div>
         <div class="rules">
-            <h2>How to Play</h2>
+            <h2>How to Play Noughts and Crosses</h2>
             <h4>Two players take turn marking the board with either X or O markers in an attempt to line up 3 markers
                 of
                 your own horizonally, vertically and diagonally.</h4>
@@ -108,6 +103,12 @@
                     ends in a draw</li>
                 <li>The game will restart automatically after each game</li>
             </ul>
+        </div>
+        <div class="scoreboard">
+            <h3>Scoreboard</h3>
+            <p id="playerXScore">Crosses total score is: 0</p>
+            <p id="playerOScore">Noughts total score is: 0</p>
+            <p id="drawScore">Total amount of draws: 0</p>
         </div>
     </main>
 
