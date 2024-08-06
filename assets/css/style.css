@@ -32,8 +32,15 @@ h1, h2 {
   display: flex;
   justify-content: center;
   align-items: center;
-
 }
+
+#index-main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
 .suggestion-form {
   display: flex;
   justify-content: center;
@@ -80,6 +87,33 @@ footer {
 #social-links a {
   margin: 0 5px;
   /* Adjust spacing between the icons */
+}
+
+.game-card {
+  width: 1000px !important;
+  height: 300px !important;
+  padding: 20px;
+}
+
+#noughts-and-crosses-img {
+  background: url("../images/nandc.png") no-repeat center center;
+  background-size: contain;
+  width: 100%;
+  height: 100%;
+}
+
+#snakes-and-ladders-img {
+  background: url("../images/sandl.png") no-repeat center center;
+  background-size: contain;
+  width: 100%;
+  height: 100%;
+}
+
+#chess-img {
+  background: url("../images/chess.png") no-repeat center center;
+  background-size: contain;
+  width: 100%;
+  height: 100%;
 }
 
 /* Rules section */
