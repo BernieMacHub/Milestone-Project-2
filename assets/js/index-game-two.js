@@ -8,7 +8,9 @@ const winningMessageElement = document.getElementById('winningMessageTwo');
 const restartButton = document.getElementById('restartButtonTwo');
 const winningMessageTextElement = document.querySelector('[data-winning-message-text-two]');
 
-// Function to play the game for a player
+/** 
+ *  Function to play the game for a player
+ */
 function play(player, psum, correction, num) {
     let sum;
     if (psum === 'p1sum') {
@@ -32,7 +34,9 @@ function play(player, psum, correction, num) {
     }
 }
 
-// Function to handle movement of player marker
+/** 
+ *  Function to handle movement of player marker
+ */
 function movePlayer(player, position, correction) {
     const gridWidth = 60; // Adjust based on actual width
     const gridHeight = 60; // Adjust based on actual height
@@ -57,7 +61,9 @@ function movePlayer(player, position, correction) {
     }
 }
 
-// Function to handle snakes and ladders
+/** 
+ *  Function to handle snakes and ladders
+ */
 function handleSnakesAndLadders(position) {
     const ladders = {
         1: 38,
@@ -81,18 +87,22 @@ function handleSnakesAndLadders(position) {
     return ladders[position] || snakes[position] || position;
 }
 
-// Event listener for dice roll button
+/** 
+ *  Event listener for dice roll button
+ */
 document.getElementById("diceBtn").addEventListener("click", function () {
     let num = Math.floor(Math.random() * 6) + 1; // Roll a dice (1-6)
-    document.getElementById("dice").innerText = num; // Update dice value
+    document.getElementById("dice").innerHTML = num; // Update dice value
+    document.getElementById("dice").style.fontSize = "200%"; // Make the dice number 100% bigger
+    document.getElementById("dice").style.color = "yellow"; // Make the dice number yellow
 
     if (tog % 2 !== 0) {
-        document.getElementById('tog').innerText = "Red team Just Rolled : ";
+        document.getElementById('tog').innerHTML = `<strong style="font-weight:bold;">Red team Just Rolled : </strong>`;
         document.getElementById('diceBtn').style.backgroundColor = "blue";
         document.getElementById('diceBtn').style.color = "white";
         play('p1', 'p1sum', 0, num);
     } else {
-        document.getElementById('tog').innerText = "Blue team Just Rolled : ";
+        document.getElementById('tog').innerHTML = `<strong style="font-weight:bold;">Blue team Just Rolled : </strong>`;
         document.getElementById('diceBtn').style.backgroundColor = "red";
         document.getElementById('diceBtn').style.color = "black";
         play('p2', 'p2sum', 0, num);
@@ -101,27 +111,35 @@ document.getElementById("diceBtn").addEventListener("click", function () {
     tog++;
 });
 
-// Function to end the game and update scores
+/** 
+ *  Function to end the game and update scores
+ */
 function endGame(winner) {
     if (winner === 'p1') {
         p1Score++;
-        document.getElementById('p1Score').innerText = `Team Red total wins: ${p1Score}`;
-        winningMessageTextElement.innerText = 'Team Red Wins!';
+        document.getElementById('p1Score').innerHTML = `Team <strong style="color: red;">Red</strong> total wins: ${p1Score}`;
+        winningMessageTextElement.innerHTML = 'Team <span style="color: red; font-weight: bold;">Red</span> Wins!';
     } else {
         p2Score++;
-        document.getElementById('p2Score').innerText = `Team Blue total wins: ${p2Score}`;
-        winningMessageTextElement.innerText = 'Team Blue Wins!';
+        document.getElementById('p2Score').innerHTML = `Team <strong style="color: blue;">Blue</strong> total wins: ${p2Score}`;
+        winningMessageTextElement.innerHTML = 'Team <span style="color: blue; font-weight: bold;">Blue</span> Wins!';
     }
+    document.getElementById('p1').classList.add('hidden'); // Hide player 1 marker
+    document.getElementById('p2').classList.add('hidden'); // Hide player 2 marker
     winningMessageElement.classList.add('show');
 }
 
-// Event listener for restart button in the overlay
+/** 
+ *  Event listener for restart button in the overlay
+ */
 restartButton.addEventListener("click", function () {
     // Hide the winning message
     winningMessageElement.classList.remove('show');
+    // Remove hidden class from player markers
+    document.getElementById('p1').classList.remove('hidden');
+    document.getElementById('p2').classList.remove('hidden');
     // Reset game state by moving players back to start position
     movePlayer('p1', p1sum = 0, 0); // Reset position for player 1
     movePlayer('p2', p2sum = 0, 0); // Reset position for player 2
     tog = 1;
 });
-

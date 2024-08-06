@@ -27,6 +27,13 @@ body {
   margin: 0;
 }
 
+h1, h2 {
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
 .suggestion-form {
   display: flex;
   justify-content: center;
@@ -77,6 +84,7 @@ footer {
 
 /* Rules section */
 .rules {
+  list-style-type: none;
   text-align: center;
 }
 
@@ -236,7 +244,7 @@ footer {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 60vh;
+  height: 45vh;
 }
 
 /* Title */
@@ -337,11 +345,17 @@ game2.html main {
 
 #diceBtn {
   z-index: 99;
-  padding: 5px;
+  /* padding: 5px; */
   cursor: pointer;
   background-color: red;
   border-radius: 5px;
   width: 200px;
+}
+
+#dice {
+  color: yellow;
+  font-weight: bold;
+  font-size: 200%;
 }
 
 .winning-message-two {
@@ -375,6 +389,29 @@ game2.html main {
 
 .winning-message-two.show {
   display: flex;
+}
+
+.hidden {
+  display: none;
+}
+
+#team-red {
+  color: red;
+  font-weight: bold;
+}
+
+#team-blue {
+  color: blue;
+  font-weight: bold;
+}
+
+#team-green {
+  color: green;
+  font-weight: bold;
+}
+
+#tog {
+  font-weight: bold;
 }
 
 /* Game 3 */

@@ -86,7 +86,7 @@ function endGame(draw) {
     if (draw) {
         winningMessageTextElement.innerText = 'Draw!';
     } else {
-        winningMessageTextElement.innerText = `${circleTurn ? "Nought's" : "Crosses's"} Wins!`;
+        winningMessageTextElement.innerHTML = `${circleTurn ? "<span style='color: blue; font-weight: bold;'>Nought's</span>" : "<span style='color: red; font-weight: bold;'>Crosses's</span>"} Wins!`;
     }
     winningMessageElement.classList.add('show');
 }
@@ -95,10 +95,10 @@ function endGame(draw) {
 function updateScore(winner) {
     if (winner === X_CLASS) {
         playerXScore++;
-        playerXScoreElement.innerText = `Crosses total score is: ${playerXScore}`;
+        playerXScoreElement.innerHTML = `Team <span style="color: red; font-weight: bold;">Crosses</span> total score is: ${playerXScore}`;
     } else if (winner === CIRCLE_CLASS) {
         playerOScore++;
-        playerOScoreElement.innerText = `Noughts total score is: ${playerOScore}`;
+        playerOScoreElement.innerHTML = `Team <span style="color: blue; font-weight: bold;">Noughts</span> total score is: ${playerOScore}`;
     } else if (winner === 'draw') {
         drawScore++;
         drawScoreElement.innerText = `Total amount of draws: ${drawScore}`;
