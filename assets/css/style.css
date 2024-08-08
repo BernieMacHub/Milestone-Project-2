@@ -12,9 +12,12 @@
   --txt-primary: ;
   --txt-secondary: ;
   --txt-alternate: ;
-  --container-bg: linear-gradient(to bottom right, , );
-  --container-bgr: linear-gradient(to top left, , );
-  --alternate-bg: linear-gradient(to top left, , );
+  --container-bg: linear-gradient(to bottom right,rgba(0, 19, 255, 0.8) ,rgba(255, 19, 0, 0.8) );
+  --container-bgr: linear-gradient(to top left, rgba(0, 19, 255, 0.8) ,rgba(255, 19, 0, 0.8) );
+  --alternate-bg: linear-gradient(to bottom right,rgba(255, 19, 0, 0.8) ,rgba(0, 255, 0, 0.8) );
+  --alternate-bgr: linear-gradient(to top left,rgba(255, 19, 0, 0.8) ,rgba(0, 255, 0, 0.8) );
+  --alternate-two-bg: linear-gradient(to bottom right,rgba(157, 88, 33, 0.8) ,rgba(247, 233, 103, 0.8) );
+  --alternate-two-bgr: linear-gradient(to top left,rgba(157, 88, 33, 0.8) ,rgba(247, 233, 103, 0.8) );
   /* Defining root variables for grid and mark sizes */
   --grid-size: 100px;
   --marker-size: calc(var(--grid-size) * 0.9);
@@ -148,6 +151,30 @@ footer {
 
 .game-card {
   padding-bottom: 300px !important;
+}
+
+#game-one-card-header {
+  background: var(--container-bg) !important;
+}
+
+#game-one-card-footer {
+  background: var(--container-bgr) !important;
+}
+
+#game-two-card-header {
+  background: var(--alternate-bg) !important;
+}
+
+#game-two-card-footer {
+  background: var(--alternate-bgr) !important;
+}
+
+#game-three-card-header {
+  background: var(--alternate-two-bgr) !important;
+}
+
+#game-three-card-footer {
+  background: var(--alternate-two-bg) !important;
 }
 
 /* Rules section */
