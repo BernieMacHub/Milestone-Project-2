@@ -29,6 +29,15 @@ body {
   display: flex;
   flex-direction: column;
   margin: 0;
+  color: var(--txt-primary);
+}
+
+.centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  list-style-type: none;
 }
 
 .navbar {
@@ -37,10 +46,13 @@ body {
 
 .navbar-brand {
   color: var(--txt-primary) !important;
+  font-size: 200%;
 }
 
 .nav-link {
   color: var(--txt-primary) !important;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 h1, h2 {
@@ -81,7 +93,7 @@ h1, h2 {
 
 footer {
   margin-top: auto;
-  background: var(--bg-secondary);
+  background: var(--bg-primary);
 }
 
 #footer-container {
@@ -91,7 +103,7 @@ footer {
   /* Center the items vertically */
   justify-content: center;
   /* Center the items horizontally */
-  background: var(--bg-secondary) !important;
+  background: var(--bg-primary) !important;
 }
 
 #social-links {
@@ -100,11 +112,13 @@ footer {
   /* Center the icons horizontally */
   margin-bottom: 10px;
   /* Add some spacing at the bottom if needed */
+  color: var(--txt-primary) !important;
 }
 
 #social-links a {
   margin: 0 5px;
   /* Adjust spacing between the icons */
+  color: var(--txt-primary) !important;
 }
 
 .game-card {
@@ -112,27 +126,6 @@ footer {
   height: 300px !important;
   padding: 20px;
 }
-
-/* #noughts-and-crosses-img {
-  background: url("../videos/noughtsandcrosses.mp4") no-repeat center center;
-  background-size: contain;
-  width: 100%;
-  height: 100%;
-}
-
-#snakes-and-ladders-img {
-  background: url("../videos/snakesandladders.mp4") no-repeat center center;
-  background-size: contain;
-  width: 100%;
-  height: 100%;
-}
-
-#chess-img {
-  background: url("../videos/chess.mp4") no-repeat center center;
-  background-size: contain;
-  width: 100%;
-  height: 100%;
-} */
 
 .video-container {
   position: relative !important;
@@ -195,10 +188,6 @@ footer {
 /* Rules section */
 .rules {
   list-style-type: none;
-  text-align: center;
-}
-
-.centered {
   text-align: center;
 }
 
