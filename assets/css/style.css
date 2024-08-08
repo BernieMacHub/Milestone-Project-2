@@ -559,19 +559,17 @@ game2.html main {
   display: flex;
 }
 
-/* @media (max-width: 576px) {} */
-
-/* @media (max-width: 768px) { */
-
-/* .box {
-    width: 11vw;
-    height: 11vh;
-  } */
-
-/* .all-img {
-    width: 7vw;
+@media (max-width: 576px) {
+  .card-text {
+    display: none;
   }
-} */
+}
+
+@media (max-width: 768px) {
+    .card-text {
+      display: none;
+  }
+}
 
 /* @media (max-width: 1200px) {}
 
