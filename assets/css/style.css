@@ -117,18 +117,21 @@ footer {
 } */
 
 .video-container {
-  position: relative;
-  width: 100%;
-  height: auto;
+  position: relative !important;
+  width: 100% !important;
+  height: 300px !important;
+  overflow: hidden !important;
 }
 
 .video-container video {
-  width: 100%;
-  height: auto;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
 }
 
 .card-body {
   position: absolute;
+  width: 90%;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -140,7 +143,11 @@ footer {
 }
 
 .card {
-  height:400px !important;
+  height: 300px !important;
+}
+
+.game-card {
+  padding-bottom: 300px !important;
 }
 
 /* Rules section */
