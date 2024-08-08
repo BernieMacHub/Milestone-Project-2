@@ -27,6 +27,18 @@
   --marker-size: calc(var(--grid-size) * 0.9);
 }
 
+.btn-primary {
+  border-color: var(--bg-secondary);
+  color: var(--txt-secondary) !important;
+  background: var(--bg-secondary) !important;
+}
+
+.btn-primary:hover {
+  border-color: var(--bg-alternate);
+  color: var(--txt-primary) !important;
+  background: var(--bg-alternate) !important;
+}
+
 .rubik-mono-one-regular {
   font-family: "Rubik Mono One", monospace;
   font-weight: 400;
