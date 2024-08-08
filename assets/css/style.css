@@ -1,3 +1,6 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Mono+One&family=Ysabeau+SC:wght@1..1000&display=swap');
+
 /* Universal box-sizing for all elements to include padding and border in its total width and height */
 *,
 *::after,
@@ -22,6 +25,16 @@
   /* Defining root variables for grid and mark sizes */
   --grid-size: 100px;
   --marker-size: calc(var(--grid-size) * 0.9);
+}
+
+.rubik-mono-one-regular {
+  font-family: "Rubik Mono One", monospace;
+  font-weight: 400;
+  font-style: normal;
+}
+
+#games-button {
+  padding: 40px !important;
 }
 
 /* Universal Sytles */
