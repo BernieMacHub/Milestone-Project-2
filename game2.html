@@ -8,9 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="keywords" content="HTML, CSS, JavaScript" />
     <meta name="description" content="Website Building with HTML and CSS" />
-
-    <!-- Title -->
-    <title>Captain Mac Games</title>
+    <meta name="author" content="Jake Valleley-Johnson" />
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="assets/images/">
@@ -25,11 +23,15 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&family=Ysabeau+SC:wght@1..1000&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&family=Ysabeau+SC:wght@1..1000&display=swap"
+        rel="stylesheet">
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
     <link rel="stylesheet" href="assets/css/gametwo.css" type="text/css" />
+
+    <!-- Title -->
+    <title>Captain Mac Games</title>
 </head>
 
 <body>
@@ -38,7 +40,8 @@
         <div>
             <div>
                 <a class="navbar-brand centered rubik-mono-one-regular" href="index.html" aria-label="Home page">
-                    <i class="fa-solid fa-skull-crossbones"></i>   Captain Mac Games   <i class="fa-solid fa-skull-crossbones"></i>
+                    <i class="fa-solid fa-skull-crossbones"></i> Captain Mac Games <i
+                        class="fa-solid fa-skull-crossbones"></i>
                 </a>
             </div>
             <div>
@@ -50,13 +53,13 @@
                     <!-- Games -->
                     <span class="nav-item">
                         <a class="nav-link" href="games.html" aria-label="Games page">
-                           Games</a>
+                            Games</a>
                     </span>
                     <!-- Contact -->
                     <span class="nav-item">
                         <a class="nav-link" aria-current="page" href="suggestion-form.html"
                             aria-label="Suggestion page">
-                             Suggestions</a>
+                            Suggestions</a>
                     </span>
                 </div>
             </div>
@@ -64,7 +67,8 @@
 
     <!-- Main Section -->
     <main>
-        <h1 class="rubik-mono-one-regular"><strong id="team-green"><i class="fa-solid fa-worm"></i> Snakes</strong> and <strong id="team-red">Ladders</strong>! <i class="fa-solid fa-water-ladder"></i></h1>
+        <h1 class="rubik-mono-one-regular"><strong id="team-green"><i class="fa-solid fa-worm"></i> Snakes</strong> and
+            <strong id="team-red">Ladders</strong>! <i class="fa-solid fa-water-ladder"></i></h1>
         <div class="centered">
             <div id="diceContainer">
                 <button id="diceBtn">Click to roll the Dice</button>
@@ -190,26 +194,27 @@
             <img id="snakes-and-ladders-board" src="assets/images/snakesandladders.png" alt="Game Board">
         </div>
         <div class="rules">
-        <h2 class="rubik-mono-one-regular">How to play Snakes and Ladders</h2>
-        <h4>Two Teams compete to try and reach 100 on the board, sounds simple right? Guess again!</h4>
-        <ul class="rules">
-            <li>Players must account for the title of the game, the snakes and the ladders!</li>
-            <li>If a player lands on the foot of a ladder, they will climb up it skipping parts of the board!</li>
-            <li>Players must be wary of the snakes, if a player lands on the head of a snake, they will slide down its back, simultaniously losing their position on the board.</li>
-        </ul>
-        <div class="scoreboard rubik-mono-one-regular">
-        <h3>Scoreboard</h3>
-            <p id="p1Score">Team <strong id="team-red">Red</strong> total wins: 0</p>
-            <p id="p2Score">Team <strong id="team-blue">Blue</strong> total wins: 0</p>
+            <h2 class="rubik-mono-one-regular">How to play Snakes and Ladders</h2>
+            <h3>Two Teams compete to try and reach 100 on the board, sounds simple right? Guess again!</h3>
+            <ul class="rules">
+                <li>Players must account for the title of the game, the snakes and the ladders!</li>
+                <li>If a player lands on the foot of a ladder, they will climb up it skipping parts of the board!</li>
+                <li>Players must be wary of the snakes, if a player lands on the head of a snake, they will slide down
+                    its back, simultaniously losing their position on the board.</li>
+            </ul>
+            <div class="scoreboard rubik-mono-one-regular">
+                <h4>Scoreboard</h4>
+                <p id="p1Score">Team <strong id="team-red">Red</strong> total wins: 0</p>
+                <p id="p2Score">Team <strong id="team-blue">Blue</strong> total wins: 0</p>
+            </div>
         </div>
-    </div>
 
     </main>
     <!-- Winning message -->
-    <div class="winning-message-two" id="winningMessageTwo">
+    <aside class="winning-message-two" id="winningMessageTwo">
         <div data-winning-message-text-two></div>
         <button id="restartButtonTwo">Click here to play another Round!</button>
-    </div>
+    </aside>
     <!-- Footer -->
     <footer>
         <!-- Grid container -->

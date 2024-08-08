@@ -8,9 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="keywords" content="HTML, CSS, JavaScript" />
   <meta name="description" content="Website Building with HTML and CSS" />
-
-  <!-- Title -->
-  <title>Captain Mac Games</title>
+  <meta name="author" content="Jake Valleley-Johnson" />
 
   <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="assets/images/">
@@ -25,10 +23,14 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&family=Ysabeau+SC:wght@1..1000&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&family=Ysabeau+SC:wght@1..1000&display=swap"
+    rel="stylesheet">
 
   <!-- Custom CSS -->
   <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
+
+  <!-- Title -->
+  <title>Captain Mac Games</title>
 </head>
 
 <body id="games">
@@ -37,97 +39,101 @@
     <div>
       <div>
         <a class="navbar-brand centered rubik-mono-one-regular" href="index.html" aria-label="Home page">
-          <i class="fa-solid fa-skull-crossbones"></i>   Captain Mac Games   <i class="fa-solid fa-skull-crossbones"></i>
-      </a>
+          <i class="fa-solid fa-skull-crossbones"></i> Captain Mac Games <i class="fa-solid fa-skull-crossbones"></i>
+        </a>
       </div>
       <div>
-          <div class="centered rubik-mono-one-regular">
-              <!-- Home -->
-              <span class="nav-item">
-                  <a class="nav-link active" href="index.html" aria-label="Home page"> Home</a>
-              </span>
-              <!-- Games -->
-              <span class="nav-item">
-                  <a class="nav-link" href="games.html" aria-label="Games page"><i class="fa-solid fa-gamepad"></i>
-                     Games</a>
-              </span>
-              <!-- Contact -->
-              <span class="nav-item">
-                  <a class="nav-link" aria-current="page" href="suggestion-form.html"
-                      aria-label="Suggestion page"> Suggestions</a>
-              </span>
-          </div>
+        <div class="centered rubik-mono-one-regular">
+          <!-- Home -->
+          <span class="nav-item">
+            <a class="nav-link active" href="index.html" aria-label="Home page"> Home</a>
+          </span>
+          <!-- Games -->
+          <span class="nav-item">
+            <a class="nav-link" href="games.html" aria-label="Games page"><i class="fa-solid fa-gamepad"></i>
+              Games</a>
+          </span>
+          <!-- Contact -->
+          <span class="nav-item">
+            <a class="nav-link" aria-current="page" href="suggestion-form.html" aria-label="Suggestion page">
+              Suggestions</a>
+          </span>
+        </div>
       </div>
   </header>
 
   <!-- Main Section -->
   <main>
-    <div id="index-main">
+    <section id="index-main">
       <div class="game-card">
-          <div class="card text-center">
-              <div class="card-header rubik-mono-one-regular" id="game-one-card-header">
-              New!
-              </div>
-              <div class="video-container">
-                  <video autoplay muted loop playsinline>
-                      <source src="/assets/videos/noughtsandcrosses.mp4" type="video/mp4" />
-                  </video>
-                  <div class="card-body" id="chess-img">
+        <div class="card text-center">
+          <div class="card-header rubik-mono-one-regular" id="game-one-card-header">
+            New!
+          </div>
+          <div class="video-container">
+            <video autoplay muted loop playsinline>
+              <source src="assets/videos/noughtsandcrosses.mp4" type="video/mp4" />
+            </video>
+            <div class="card-body" id="chess-img">
               <h5 class="card-title rubik-mono-one-regular">Noughts & Crosses</h5>
-                  <p class="card-text">This is the first game i developed and also commonly known as Tic-Tac-Toe. It consists of two players playing through rounds to see who can get the most wins!.</p>
-                  <a href="game1.html" class="btn btn-primary rubik-mono-one-regular">Play the Game</a>
-              </div>
+              <p class="card-text">This is the first game i developed and also commonly known as Tic-Tac-Toe. It
+                consists of two players playing through rounds to see who can get the most wins!.</p>
+              <a href="game1.html" class="btn btn-primary rubik-mono-one-regular">Play the Game</a>
+            </div>
           </div>
           <div class="card-footer text-body-secondary rubik-mono-one-regular" id="game-one-card-footer">
-          Multiplayer!
+            Multiplayer!
           </div>
+        </div>
       </div>
-  </div>
-</div>
-<div id="index-main">
-  <div class="game-card">
-      <div class="card text-center">
+    </section>
+    <section id="index-main">
+      <div class="game-card">
+        <div class="card text-center">
           <div class="card-header rubik-mono-one-regular" id="game-two-card-header">
-          New!
+            New!
           </div>
           <div class="video-container">
-              <video autoplay muted loop playsinline>
-                  <source src="/assets/videos/snakesandladders.mp4" type="video/mp4" />
-              </video>
-              <div class="card-body" id="chess-img">
+            <video autoplay muted loop playsinline>
+              <source src="assets/videos/snakesandladders.mp4" type="video/mp4" />
+            </video>
+            <div class="card-body" id="chess-img">
               <h5 class="card-title rubik-mono-one-regular">Snakes and Ladders</h5>
-                  <p class="card-text">The second game i made which is a personal favourite and the one i am most proud of, with minimal CSS imput compared to the first game i made.</p>
-                  <a href="game2.html" class="btn btn-primary rubik-mono-one-regular">Play the Game</a>
-              </div>
+              <p class="card-text">The second game i made which is a personal favourite and the one i am most proud of,
+                with minimal CSS imput compared to the first game i made.</p>
+              <a href="game2.html" class="btn btn-primary rubik-mono-one-regular">Play the Game</a>
+            </div>
           </div>
           <div class="card-footer text-body-secondary rubik-mono-one-regular" id="game-two-card-footer">
-          Multiplayer!
+            Multiplayer!
           </div>
+        </div>
       </div>
-  </div>
-</div>
-<div id="index-main">
-  <div class="game-card">
-      <div class="card text-center">
+    </section>
+    <section id="index-main">
+      <div class="game-card">
+        <div class="card text-center">
           <div class="card-header rubik-mono-one-regular" id="game-three-card-header">
-          In Development!
+            In Development!
           </div>
           <div class="video-container">
-              <video autoplay muted loop playsinline>
-                  <source src="/assets/videos/chess.mp4" type="video/mp4" />
-              </video>
-              <div class="card-body" id="chess-img">
-                  <h5 class="card-title rubik-mono-one-regular">Chess</h5>
-                  <p class="card-text">This game is the final game i wanted to encorporate but due to time constraints and delays i have paused the development of this game but have left it in place for people to see the current progess.</p>
-                  <a href="game3.html" class="btn btn-primary rubik-mono-one-regular">Play the Game</a>
-              </div>
+            <video autoplay muted loop playsinline>
+              <source src="assets/videos/chess.mp4" type="video/mp4" />
+            </video>
+            <div class="card-body" id="chess-img">
+              <h5 class="card-title rubik-mono-one-regular">Chess</h5>
+              <p class="card-text">This game is the final game i wanted to encorporate but due to time constraints and
+                delays i have paused the development of this game but have left it in place for people to see the
+                current progess.</p>
+              <a href="game3.html" class="btn btn-primary rubik-mono-one-regular">Play the Game</a>
+            </div>
           </div>
           <div class="card-footer text-body-secondary rubik-mono-one-regular" id="game-three-card-footer">
-          Multiplayer!
+            Multiplayer!
           </div>
+        </div>
       </div>
-  </div>
-</div>
+    </section>
   </main>
   <!-- Footer -->
   <footer>
