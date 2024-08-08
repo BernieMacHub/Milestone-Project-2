@@ -1,3 +1,3 @@
 # Milestone-Project-2
 
-#### Bernie Macs Games ####
+#### Captain Macs Games ####

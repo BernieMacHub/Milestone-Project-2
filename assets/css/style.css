@@ -40,6 +40,12 @@ body {
   align-items: center;
   text-align: center;
   list-style-type: none;
+  margin:auto;
+}
+
+.intro {
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 .navbar {
