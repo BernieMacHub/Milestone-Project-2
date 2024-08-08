@@ -39,6 +39,9 @@ body {
   color: var(--txt-primary) !important;
 }
 
+.nav-link {
+  color: var(--txt-primary) !important;
+}
 
 h1, h2 {
   padding: 30px;
@@ -78,6 +81,7 @@ h1, h2 {
 
 footer {
   margin-top: auto;
+  background: var(--bg-secondary);
 }
 
 #footer-container {
@@ -87,6 +91,7 @@ footer {
   /* Center the items vertically */
   justify-content: center;
   /* Center the items horizontally */
+  background: var(--bg-secondary) !important;
 }
 
 #social-links {
