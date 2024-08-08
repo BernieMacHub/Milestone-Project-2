@@ -57,7 +57,7 @@ function coloring() {
 }
 coloring()
 
-function reddish() {
+function pathing() {
     document.querySelectorAll('.box').forEach(i1 => {
         if (i1.style.backgroundColor == 'lightblue') {
 
@@ -509,7 +509,7 @@ document.querySelectorAll('.box').forEach(item => {
             whosTurn('B')
         }
 
-        reddish()
+        pathing()
 
 
 
