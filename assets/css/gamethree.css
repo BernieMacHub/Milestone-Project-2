@@ -17,8 +17,8 @@
     --container-bgr: linear-gradient(to top left, rgba(0, 19, 255, 0.8) ,rgba(255, 19, 0, 0.8) );
     --alternate-bg: linear-gradient(to bottom right,rgba(255, 19, 0, 0.8) ,rgba(0, 255, 0, 0.8) );
     --alternate-bgr: linear-gradient(to top left,rgba(255, 19, 0, 0.8) ,rgba(0, 255, 0, 0.8) );
-    --alternate-two-bg: linear-gradient(to bottom right,rgba(157, 88, 33, 0.8) ,rgba(247, 233, 103, 0.8) );
-    --alternate-two-bgr: linear-gradient(to top left,rgba(157, 88, 33, 0.8) ,rgba(247, 233, 103, 0.8) );
+    --alternate-two-bg: linear-gradient(to bottom right,rgb(199, 182, 165) ,rgb(112, 47, 49) );
+  --alternate-two-bgr: linear-gradient(to top left,rgb(199, 182, 165) ,rgb(112, 47, 49) );
     /* Defining root variables for grid and mark sizes */
     --grid-size: 100px;
     --marker-size: calc(var(--grid-size) * 0.9);
