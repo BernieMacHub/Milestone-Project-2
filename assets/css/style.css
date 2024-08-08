@@ -6,12 +6,12 @@
 }
 
 :root {
-  --bg-primary: ;
-  --bg-secondary: ;
-  --bg-alternate: ;
-  --txt-primary: ;
-  --txt-secondary: ;
-  --txt-alternate: ;
+  --bg-primary: black;
+  --bg-secondary: white;
+  --bg-alternate: silver;
+  --txt-primary: white;
+  --txt-secondary: black;
+  --txt-alternate: silver;
   --container-bg: linear-gradient(to bottom right,rgba(0, 19, 255, 0.8) ,rgba(255, 19, 0, 0.8) );
   --container-bgr: linear-gradient(to top left, rgba(0, 19, 255, 0.8) ,rgba(255, 19, 0, 0.8) );
   --alternate-bg: linear-gradient(to bottom right,rgba(255, 19, 0, 0.8) ,rgba(0, 255, 0, 0.8) );
@@ -25,10 +25,20 @@
 
 body {
   min-height: 100vh;
+  background: var(--bg-primary);
   display: flex;
   flex-direction: column;
   margin: 0;
 }
+
+.navbar {
+  background: var(--bg-primary) !important;
+}
+
+.navbar-brand {
+  color: var(--txt-primary) !important;
+}
+
 
 h1, h2 {
   padding: 30px;

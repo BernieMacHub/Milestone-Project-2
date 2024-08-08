@@ -57,39 +57,36 @@ function coloring() {
 }
 coloring()
 
+/**
+ * Highlight the valid move paths for the pieces.
+ */
 function reddish() {
     document.querySelectorAll('.box').forEach(i1 => {
-        if (i1.style.backgroundColor == 'lightblue') {
-
+        if (i1.style.backgroundColor === 'lightblue') {
             document.querySelectorAll('.box').forEach(i2 => {
+                if (i2.style.backgroundColor === 'lightgreen' && i2.innerText.length !== 0) {
+                    const lightgreenText = i2.innerText;
+                    const lightblueText = i1.innerText;
+                    const lightblueColor = lightblueText[0];
+                    const lightgreenColor = lightgreenText[0];
 
-                if (i2.style.backgroundColor == 'lightgreen' && i2.innerText.length !== 0) {
+                    const getId = i2.id;
+                    const arr = Array.from(getId);
+                    arr.shift();
+                    const aside = eval(arr.pop());
+                    const aup = eval(arr.shift());
+                    const a = aside + aup;
 
-
-                    lightgreenText = i2.innerText
-
-                    lightblueText = i1.innerText
-
-                    lightblueColor = ((Array.from(lightblueText)).shift()).toString()
-                    lightgreenColor = ((Array.from(lightgreenText)).shift()).toString()
-
-                    getId = i2.id
-                    arr = Array.from(getId)
-                    arr.shift()
-                    aside = eval(arr.pop())
-                    aup = eval(arr.shift())
-                    a = aside + aup
-
-                    if (a % 2 == 0 && lightblueColor == lightgreenColor) {
-                        i2.style.backgroundColor = 'rgb(199, 182, 165)'
+                    if (a % 2 === 0 && lightblueColor === lightgreenColor) {
+                        i2.style.backgroundColor = 'rgb(199, 182, 165)';
                     }
-                    if (a % 2 !== 0 && lightblueColor == lightgreenColor) {
-                        i2.style.backgroundColor = 'rgb(112, 47, 49)'
+                    if (a % 2 !== 0 && lightblueColor === lightgreenColor) {
+                        i2.style.backgroundColor = 'rgb(112, 47, 49)';
                     }
                 }
-            })
+            });
         }
-    })
+    });
 }
 
 tog = 1
