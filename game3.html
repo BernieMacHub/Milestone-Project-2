@@ -68,12 +68,21 @@
     <!-- Main Section -->
     <main id="hide-on-small-device">
         <h1 class="rubik-mono-one-regular">Chess!</h1>
+        <div class="rules">
+            <h3 class="rubik-mono-one-regular">How to play Chess...</h3>
+                <p>
+                    Each player has 16 pieces and the objective is to Checkmate the opponent's king.
+                </p>
+                <p>
+                    Each piece moves differently (e.g., pawns forward, knights in an "L" shape) and players can Take opponent's pieces by landing on their square.
+                </p>
+                <p>
+                    If you opponents King is in check with no escape; you win.
+                </p>
+        </div>
         <div id="game3">
             <div class="game-three-container">
                 <h2 class="rubik-mono-one-regular" id="tog">White's turn</h2>
-                <div id="restart-button-container">
-                    <a href="game3.html" class="btn btn-primary rubik-mono-one-regular">Reset the Board!</a>
-                </div>
                 <ul class="chess-ul">
                     <div class="rows" id="row8">
                         <li class="box" id="b801">Brook</li>
@@ -156,22 +165,19 @@
                         <li class="box" id="b108">Wrook</li>
                     </div>
                 </ul>
+                <div id="restart-button-container">
+                    <a href="game3.html" class="btn btn-primary rubik-mono-one-regular">Reset the Board!</a>
+                </div>
             </div>
-        </div>
-        <div>
-            <h3 class="rubik-mono-one-regular">How to play...</h3>
-            <p>
-                Some text about how to play the game
-            </p>
         </div>
     </main>
     <aside id="small-device-message">
         <p>Please use a tablet device or computer to play this game.</p>
     </aside>
     <!-- Winning message -->
-    <!-- <div class="winning-message-three" id="winningMessageThree">
+    <!-- <div class="winning-message-three" id="winning-message-three">
         <div data-winning-message-text-three></div>
-        <button id="restartButtonThree">Restart</button>
+        <button id="restart-button-three">Restart</button>
     </div> -->
     <!-- Footer -->
     <footer>

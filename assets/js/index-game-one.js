@@ -17,14 +17,14 @@ const WINNING_COMBINATIONS = [
 // Selecting all the grids, board, and the winning message elements
 const grids = document.querySelectorAll('[data-grid]');
 const board = document.getElementById('board');
-const winningMessageElement = document.getElementById('winningMessage');
-const restartButton = document.getElementById('restartButton');
+const winningMessageElement = document.getElementById('winning-message');
+const restartButton = document.getElementById('restart-button');
 const winningMessageTextElement = document.querySelector('[data-winning-message-text]');
 
 // Selecting the score elements
-const playerXScoreElement = document.getElementById('playerXScore');
-const playerOScoreElement = document.getElementById('playerOScore');
-const drawScoreElement = document.getElementById('drawScore');
+const playerXScoreElement = document.getElementById('player-x-score');
+const playerOScoreElement = document.getElementById('player-o-score');
+const drawScoreElement = document.getElementById('draw-score');
 
 // Variables to keep track of turns and scores
 let circleTurn;

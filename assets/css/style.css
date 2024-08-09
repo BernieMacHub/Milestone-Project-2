@@ -219,6 +219,10 @@ footer {
   display: none;
 }
 
+.scoreboard {
+  padding-top: 50px;
+}
+
 
 /* @media (max-width: 576px) {} */
 

@@ -4,8 +4,8 @@ let p2sum = 0;
 let p1Score = 0;
 let p2Score = 0;
 
-const winningMessageElement = document.getElementById('winningMessageTwo');
-const restartButton = document.getElementById('restartButtonTwo');
+const winningMessageElement = document.getElementById('winning-message-two');
+const restartButton = document.getElementById('restart-button-two');
 const winningMessageTextElement = document.querySelector('[data-winning-message-text-two]');
 
 /** 

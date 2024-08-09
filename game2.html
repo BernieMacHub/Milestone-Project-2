@@ -69,12 +69,15 @@
     <main id="hide-on-small-device">
         <h1 class="rubik-mono-one-regular"><strong id="team-green"><i class="fa-solid fa-worm"></i> Snakes</strong> and
             <strong id="team-red">Ladders</strong>! <i class="fa-solid fa-water-ladder"></i></h1>
-        <div class="centered">
-            <div id="diceContainer">
-                <button id="diceBtn">Click to roll the Dice</button>
-                <p id="tog">Red team Just Rolled : </p>
-                <p id="dice">0</p>
-            </div>
+        <div class="rules">
+            <h2 class="rubik-mono-one-regular">How to play Snakes and Ladders</h2>
+            <h3>Two Teams compete to try and reach 100 on the board, sounds simple right? Guess again!</h3>
+            <ul class="rules">
+                <li>Players must account for the title of the game, the snakes and the ladders!</li>
+                <li>If a player lands on the foot of a ladder, they will climb up it skipping parts of the board!</li>
+                <li>Players must be wary of the snakes, if a player lands on the head of a snake, they will slide down
+                    its back, simultaniously losing their position on the board.</li>
+            </ul>
         </div>
         <div id="game2">
             <div class="game-two-container">
@@ -193,15 +196,14 @@
             </div>
             <img id="snakes-and-ladders-board" src="assets/images/snakesandladders.png" alt="Game Board">
         </div>
+        <div class="centered">
+            <div id="diceContainer">
+                <button id="diceBtn">Click to roll the Dice</button>
+                <p id="tog">Red team Just Rolled : </p>
+                <p id="dice">0</p>
+            </div>
+        </div>
         <div class="rules">
-            <h2 class="rubik-mono-one-regular">How to play Snakes and Ladders</h2>
-            <h3>Two Teams compete to try and reach 100 on the board, sounds simple right? Guess again!</h3>
-            <ul class="rules">
-                <li>Players must account for the title of the game, the snakes and the ladders!</li>
-                <li>If a player lands on the foot of a ladder, they will climb up it skipping parts of the board!</li>
-                <li>Players must be wary of the snakes, if a player lands on the head of a snake, they will slide down
-                    its back, simultaniously losing their position on the board.</li>
-            </ul>
             <div class="scoreboard rubik-mono-one-regular">
                 <h4>Scoreboard</h4>
                 <p id="p1Score">Team <strong id="team-red">Red</strong> total wins: 0</p>
@@ -211,9 +213,9 @@
 
     </main>
     <!-- Winning message -->
-    <aside class="winning-message-two" id="winningMessageTwo">
+    <aside class="winning-message-two" id="winning-message-two">
         <div data-winning-message-text-two></div>
-        <button id="restartButtonTwo">Click here to play another Round!</button>
+        <button id="restart-button-two">Click here to play another Round!</button>
     </aside>
     <aside id="small-device-message">
         <p>Please use a tablet device or computer to play this game.</p>
