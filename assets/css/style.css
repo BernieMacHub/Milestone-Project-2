@@ -214,15 +214,23 @@ footer {
   text-align: center;
 }
 
-@media (max-width: 576px) {
-  .card-text {
-    display: none;
-  }
+
+#small-device-message {
+  display: none;
 }
 
-@media (max-width: 768px) {
-    .card-text {
-      display: none;
+
+/* @media (max-width: 576px) {} */
+
+@media (max-width: 700px) {
+  #hide-on-small-device {
+    display: none;
+  }
+
+  #small-device-message {
+    display: flex;
+    justify-content: center;
+    margin: auto;
   }
 }
 
