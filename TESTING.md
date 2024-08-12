@@ -1,6 +1,24 @@
 # Testing
 
 ## Table of Contents
+
+## Table of Contents
+
+- [Automated Testing](#automated-testing)
+
+  - [W3 Validator - HTML](#w3-validator---html)
+  - [W3 Jigsaw - CSS](#w3-jigsaw---css)
+  - [JSHint - Javascript](#jshint---javascript)
+  - [Lighthouse](#lighthouse)
+
+- [Manual Testing](#manual-testing)
+
+  - [Full Site & Feature Testing](#full-site--feature-testing)
+
+    - [Devices](#devices)
+    - [Features](#features)
+
+    ***
 1. [Code Validation](#code-validation)
 2. [Performance Testing](#performance-testing)
 3. [Manual Testing](#manual-testing)
@@ -12,7 +30,7 @@
 5. [Device Compatibility](#device-compatibility)
 6. [Known Bugs](#known-bugs)
 
-## Code Validation
+## Automated Testing - Code Validation
 
 ### HTML
 - The HTML code was validated using [W3C Markup Validation Service](https://validator.w3.org/).
