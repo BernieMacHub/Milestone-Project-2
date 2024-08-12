@@ -250,19 +250,28 @@ function highlightPawnPaths(position, isWhiteTurn) {
 
 /**
  * Highlights possible moves for a king.
+ * @param {number} position - The position of the king.
  */
 function highlightKingPaths(position) {
     const moves = [1, -1, 100, -100, 101, 99, -101, -99];
     moves.forEach(offset => highlightMove(position + offset, 'green'));
 
     // Castling moves
-    if (whiteCastleAvailable && position === 105) {
-        highlightMove(107, 'aqua', true); // King-side castling
-        highlightMove(103, 'aqua', true); // Queen-side castling
-    }
-    if (blackCastleAvailable && position === 805) {
-        highlightMove(807, 'aqua', true); // King-side castling
-        highlightMove(803, 'aqua', true); // Queen-side castling
+    const row = Math.floor(position / 100);
+    if (row === 1) { // White pieces
+        if (whiteCastleAvailable) {
+            if (position === 105) {
+                highlightMove(107, 'aqua', true); // King-side castling
+                highlightMove(103, 'aqua', true); // Queen-side castling
+            }
+        }
+    } else if (row === 8) { // Black pieces
+        if (blackCastleAvailable) {
+            if (position === 805) {
+                highlightMove(807, 'aqua', true); // King-side castling
+                highlightMove(803, 'aqua', true); // Queen-side castling
+            }
+        }
     }
 }
 
@@ -304,20 +313,23 @@ function highlightKnightPaths(position) {
 
 /**
  * Highlights moves in a specific direction.
+ * @param {number} position - The current position of the piece.
+ * @param {number} offset - The offset indicating direction of movement.
  */
 function highlightDirectionalMoves(position, offset) {
     let steps = 1;
     while (true) {
         const targetPos = position + steps * offset;
         if (!isValidPosition(targetPos)) break; // Boundary check
-        
+
         // Check if target position is out of bounds for specific directions
         if (offset === 1 && (targetPos % 100) === 1) break; // Right edge
         if (offset === -1 && (targetPos % 100) === 8) break; // Left edge
         if (offset === 100 && (Math.floor(targetPos / 100)) === 8) break; // Top edge
         if (offset === -100 && (Math.floor(targetPos / 100)) === 1) break; // Bottom edge
 
-        if (!highlightMove(targetPos, 'green')) break; // Stop if blocked by a piece
+        // Continue highlighting if the square is occupied by own piece but not stop
+        if (!highlightMove(targetPos, 'green', false)) break; // Stop if blocked by an enemy piece
         steps++;
     }
 }
@@ -335,11 +347,25 @@ function isValidPosition(position) {
 
 /**
  * Highlights a move to a target box.
+ * @param {number} position - The position to check.
+ * @param {string} color - The highlight color.
+ * @param {boolean} mustBeEmpty - Whether the target box must be empty for the move to be valid.
+ * @returns {boolean} - True if the move is highlighted, false otherwise.
  */
 function highlightMove(position, color, mustBeEmpty = false) {
     const targetBox = document.getElementById(`b${position}`);
     if (targetBox) {
-        if (mustBeEmpty && targetBox.innerText.length > 0) return false;
+        const targetPiece = targetBox.innerText;
+        if (mustBeEmpty && targetPiece.length > 0) return false;
+
+        if (targetPiece.length > 0) {
+            const pieceColor = targetPiece.charAt(0);
+            const isWhiteTurn = tog % 2 !== 0;
+            const currentColor = isWhiteTurn ? 'W' : 'B';
+
+            if (pieceColor === currentColor) return false; // Prevent landing on a square occupied by own piece
+        }
+        
         targetBox.style.backgroundColor = color;
         return true;
     }
