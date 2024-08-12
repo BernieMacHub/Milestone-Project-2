@@ -38,9 +38,9 @@ The main font used is a very weighted Ysabeau, it gives a great asthetic to give
 Imagery is used to just decorate the games themselves, such as an image for the board, or the board peices, some videos have been used for the game page as background for the cards rather than still images.
 
 ### Wireframes
-- ![Desktop Wireframe Placeholder](path/to/desktop-wireframe.png)
-- ![Tablet Wireframe Placeholder](path/to/tablet-wireframe.png)
-- ![Mobile Wireframe Placeholder](path/to/mobile-wireframe.png)
+- ![Desktop Wireframe](documentation/images/wireframe-desktop.png)
+- ![Tablet Wireframe](documentation/images/wireframe-tablet.png)
+- ![Mobile Wireframe](documentation/images/wireframe-mobile.png)
 
 ## Features
 

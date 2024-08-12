@@ -13,18 +13,25 @@
     --txt-primary: white;
     --txt-secondary: black;
     --txt-alternate: silver;
-    --container-bg: linear-gradient(to bottom right,rgba(0, 19, 255, 0.8) ,rgba(255, 19, 0, 0.8) );
-    --container-bgr: linear-gradient(to top left, rgba(0, 19, 255, 0.8) ,rgba(255, 19, 0, 0.8) );
-    --alternate-bg: linear-gradient(to bottom right,rgba(255, 19, 0, 0.8) ,rgba(0, 255, 0, 0.8) );
-    --alternate-bgr: linear-gradient(to top left,rgba(255, 19, 0, 0.8) ,rgba(0, 255, 0, 0.8) );
-    --alternate-two-bg: linear-gradient(to bottom right,rgb(199, 182, 165) ,rgb(112, 47, 49) );
-  --alternate-two-bgr: linear-gradient(to top left,rgb(199, 182, 165) ,rgb(112, 47, 49) );
+    --container-bg: linear-gradient(to bottom right, rgba(0, 19, 255, 0.8), rgba(255, 19, 0, 0.8));
+    --container-bgr: linear-gradient(to top left, rgba(0, 19, 255, 0.8), rgba(255, 19, 0, 0.8));
+    --alternate-bg: linear-gradient(to bottom right, rgba(255, 19, 0, 0.8), rgba(0, 255, 0, 0.8));
+    --alternate-bgr: linear-gradient(to top left, rgba(255, 19, 0, 0.8), rgba(0, 255, 0, 0.8));
+    --alternate-two-bg: linear-gradient(to bottom right, rgb(199, 182, 165), rgb(112, 47, 49));
+    --alternate-two-bgr: linear-gradient(to top left, rgb(199, 182, 165), rgb(112, 47, 49));
     /* Defining root variables for grid and mark sizes */
     --grid-size: 100px;
     --marker-size: calc(var(--grid-size) * 0.9);
 }
 
 /* Game 3 */
+
+dl,
+ol,
+ul {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}
 
 .game-three-container {
     display: grid;
