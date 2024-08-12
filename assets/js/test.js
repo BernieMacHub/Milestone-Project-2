@@ -128,6 +128,7 @@ function movePiece(targetBox) {
         showWinningMessage(winner);  // Display the winning message
     }
 }
+
 /**
  * Display the winning message and end the game.
  * @param {string} winner - The color of the winning player ("White" or "Black").
@@ -141,6 +142,7 @@ function showWinningMessage(winner) {
         box.style.pointerEvents = 'none';
     });
 }
+
 /**
  * Update the score based on the winner.
  * @param {string} winner - The color of the winning player ("White" or "Black").
@@ -155,9 +157,6 @@ function updateScore(winner) {
     }
 }
 
-/**
- * Restart the game by reloading the page.
- */
 /**
  * Restart the game without reloading the page.
  */
@@ -182,9 +181,6 @@ function restartGame() {
         box.style.pointerEvents = 'auto';
     });
 }
-
-// Add event listener to the restart button
-document.getElementById('restart-button-three').addEventListener('click', restartGame);
 
 // Add event listener to the restart button
 document.getElementById('restart-button-three').addEventListener('click', restartGame);
@@ -308,8 +304,20 @@ function highlightKnightPaths(position) {
 function highlightDirectionalMoves(position, offset) {
     for (let i = 1; i < 9; i++) {
         const targetPos = position + i * offset;
+        if (!isValidPosition(targetPos)) break; // Boundary check
         if (!highlightMove(targetPos, 'green')) break;
     }
+}
+
+/**
+ * Checks if a position is valid on the board.
+ * @param {number} position - The position to check.
+ * @returns {boolean} - True if the position is valid, false otherwise.
+ */
+function isValidPosition(position) {
+    const row = Math.floor(position / 100);
+    const col = position % 100;
+    return row >= 1 && row <= 8 && col >= 1 && col <= 8;
 }
 
 /**
