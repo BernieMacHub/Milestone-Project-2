@@ -9,65 +9,93 @@
   - [W3 Validator - HTML](#w3-validator---html)
   - [W3 Jigsaw - CSS](#w3-jigsaw---css)
   - [JSHint - Javascript](#jshint---javascript)
-  - [Lighthouse](#lighthouse)
+
+- [Performance Testing](#performance-testing)
+
+  - [Lighthouse](#Google-dev-tools---lighthouse)
 
 - [Manual Testing](#manual-testing)
 
   - [Full Site & Feature Testing](#full-site--feature-testing)
 
-    - [Devices](#devices)
-    - [Features](#features)
+    - [Navigation](#navigation)
+    - [Responsiveness](#responsiveness)
+    - [Links](#links)
+    - [Games](#games)
+
+  - [Browsers](#browser-compatibility)
+  - [Device](#device-compatibility)
+  - [Bugs](#known-bugs)
 
     ***
-1. [Code Validation](#code-validation)
-2. [Performance Testing](#performance-testing)
-3. [Manual Testing](#manual-testing)
-   - [Navigation](#navigation)
-   - [Responsiveness](#responsiveness)
-   - [Form Validation](#form-validation)
-   - [Links](#links)
-4. [Browser Compatibility](#browser-compatibility)
-5. [Device Compatibility](#device-compatibility)
-6. [Known Bugs](#known-bugs)
 
 ## Automated Testing - Code Validation
 
-### HTML
-- The HTML code was validated using [W3C Markup Validation Service](https://validator.w3.org/).
-- [Describe any warnings or errors that were found and how they were resolved, or state that there were no issues.]
+### W3 Validator - HTML
 
-### CSS
-- The CSS code was validated using [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/).
-- [Describe any warnings or errors that were found and how they were resolved, or state that there were no issues.]
+[W3C Validator](https://validator.w3.org/) has been used to ensure the validity of the HTML markup across the project.
 
-### JavaScript
-- The JavaScript code was validated using [JSHint](https://jshint.com/) (or another tool of your choice).
-- [Describe any warnings or errors that were found and how they were resolved, or state that there were no issues.]
+- [Index/Home](path)  - Issue and Resolution.
+- [Game one](path)  - Issue and Resolution.
+- [Game two](path)  - Issue and Resolution.
+- [Game three](path)  - Issue and Resolution.
+- [games](path)  - Issue and Resolution.
+- [Contact form](path)  - Issue and Resolution.
+- [Contact response](path)  - Issue and Resolution.
+
+### W3 Jigsaw - CSS
+
+- [Game one CSS](path)  - CSS for Game one.
+- Issue and Resolution.
+
+- [Game two CSS](path)  - CSS for Game two.
+- Issue and Resolution.
+
+- [Game three CSS](path)   - CSS for Game three.
+- Issue and Resolution.
+
+### JShint - Javascript
+
+[JSHint](https://jshint.com/) has been used to validate my JavaScript.
+
+[JSHint - game one](documentation/images/.png) - Passed with No errors
+
+[JSHint - game two](documentation/images/.png) - Passed with No errors
+
+[JSHint - game three](documentation/images/.png) - Passed with No errors
+
+- Unused variable
 
 ## Performance Testing
+
+### Google Dev tools - Lighthouse
 
 - The performance of the website was tested using [Google Lighthouse](https://developers.google.com/web/tools/lighthouse).
 - [Provide the Lighthouse performance scores or any issues discovered, and how they were addressed.]
 
 ## Manual Testing
 
-### Navigation
+### Full Site & Feature Testing
+
+#### Navigation
 - **Test:** Ensure that all navigation links are functioning correctly and lead to the appropriate sections.
-- **Result:** [Describe the outcome of the test, e.g., "All navigation links function as expected."]
+- **Result:** All navigation links function as expected.
 
-### Responsiveness
+#### Responsiveness
 - **Test:** Check the responsiveness of the website across various devices (desktop, tablet, mobile).
-- **Result:** [Describe the results, e.g., "The site is fully responsive on all tested devices."]
+- **Result:** The site is fully responsive on all tested devices (The games are indended for tablet device and upwards, the website wil respond accordingly if someone attempts to play on a mobile device)."
 
-### Form Validation
-- **Test:** Test any forms for proper validation (e.g., required fields, correct formats).
-- **Result:** [Describe the outcome, e.g., "Form validation works as intended, with appropriate error messages."]
-
-### Links
+#### Links
 - **Test:** Verify that all internal and external links are working correctly.
-- **Result:** [Describe the results, e.g., "All links are functional and lead to the correct destinations."]
+- **Result:** All links are functional and lead to the correct destinations."
 
-## Browser Compatibility
+#### Games
+- **Test:** Tested all completed games to make sure all functions are working correctly.
+- **Result:** All Games are functional and working correctly (The Chess game is still underdevelopment and doesnt have any form of winning message or scoreboard functionality at this point)."
+
+
+
+### Browser Compatibility
 
 - The website was tested on the following browsers:
   - Google Chrome
@@ -75,31 +103,31 @@
   - Microsoft Edge
   - Safari
 
-- **Result:** [Describe how the site performed on each browser, e.g., "The website performs consistently across all tested browsers."]
+- **Result:** The website performs consistently across all tested browsers.
 
-## Device Compatibility
+### Device Compatibility
 
 - The website was tested on the following devices:
   - Desktop (Windows, macOS)
   - Tablet (iPad, Android tablet)
   - Mobile (iPhone, Android phone)
 
-- **Result:** [Describe the compatibility on each device, e.g., "The website displays correctly on all devices tested."]
+- **Result:** The website displays correctly on all devices tested."
 
-## Known Bugs
+### Known Bugs
 
-- **Bug 1:** [Describe any known issues, e.g., "There is a minor issue with the layout on older versions of Internet Explorer."]
-  - **Fix:** [Describe if there is a workaround or if the issue is being investigated.]
+- **Bug 1:** There was an issue with the snakes and ladders game, when players landed on the same square, only one marker was visible.
+  - **Fix:** It was a simple case of offsetting the marker in the CSS to display them stacked on top of one another.
 
-- **Bug 2:** [Describe any other bugs or issues.]
-  - **Fix:** [Provide any relevant information on fixes or status.]
-
-
+- **Bug 2:** Chess game winning message and scoreboard do not function.
+  - **Fix:** No permenant fix has been implemented as of yet, temporary workaround has been added to allow players to reset the board peices opon a king being taken off the board.
 
 
 
 
-things to look up
+
+
+<!-- things to look up
 
 dom conetnt on load
 jshint
@@ -115,4 +143,4 @@ https://www.youtube.com/watch?v=8ext9G7xspg&t=5785s
 https://www.youtube.com/watch?v=8ext9G7xspg&t=5785s
 6:46
 https://blog.webdevsimplified.com/2023-04/html-dialog/
-https://github.com/secarrel/Bird_Count
+https://github.com/secarrel/Bird_Count -->

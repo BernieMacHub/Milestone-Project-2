@@ -1,3 +1,5 @@
+/ *jshint esversion 6 */
+
 let tog = 1;
 let p1sum = 0;
 let p2sum = 0;

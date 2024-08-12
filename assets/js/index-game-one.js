@@ -1,3 +1,5 @@
+/ *jshint esversion 6 */
+
 // Constants for the X and O classes
 const X_CLASS = 'x';
 const CIRCLE_CLASS = 'circle';

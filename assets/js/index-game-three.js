@@ -1,3 +1,5 @@
+/ *jshint esversion 6 */
+
 let numOfKings = 0;
 let whiteScore = 0;
 let blackScore = 0;
