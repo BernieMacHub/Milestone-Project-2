@@ -65,20 +65,33 @@
 
 [JSHint](https://jshint.com/) has been used to validate my JavaScript.
 
-[JSHint - game one](documentation/images/.png) - Passed with No errors
+[JSHint - game one](documentation/images/jshint-game-one.PNG) - Passed with No errors, warnings ignored due to it having no effect on the games perfomance.
 
-[JSHint - game two](documentation/images/.png) - Passed with No errors
+[JSHint - game two](documentation/images/jshint-game-two.PNG) - Passed with No errors, warnings ignored due to it having no effect on the games perfomance.
 
-[JSHint - game three](documentation/images/.png) - Passed with No errors
+[JSHint - game three](documentation/images/jshint-game-three.PNG) - Passed with No errors or warnings.
 
-- Unused variable
+- Most warnings are relating to Unused variables which are of no consequence to the websites overall performance.
 
 ## Performance Testing
 
 ### Google Dev tools - Lighthouse
 
 - The performance of the website was tested using [Google Lighthouse](https://developers.google.com/web/tools/lighthouse).
-- [Provide the Lighthouse performance scores or any issues discovered, and how they were addressed.]
+
+[Index Page](documentation/images/lh-index.png)
+
+[Games Page](documentation/images/lh-games.png)
+
+[Game 1 Page](documentation/images/lh-game-one.png)
+
+[Game 2 Page](documentation/images/jshint-game-two.PNG)
+
+[Game 3 Page](documentation/images/w3-game-three.PNG)
+
+[Contact Us Page](documentation/images)
+
+[Response Page](documentation/images)
 
 ## Manual Testing
 
@@ -99,13 +112,6 @@
 #### Games
 - **Test:** Tested all completed games to make sure all functions are working correctly.
 - **Result:** All Games are functional and working correctly (The Chess game is still underdevelopment and doesnt have any form of winning message or scoreboard functionality at this point)."
-
-| Feature                                | Expectation                                                                                         | Test Performed                      | Outcome                                                                     |
-| -------------------------------------- | --------------------------------------------------------------------------------------------------- | ----------------------------------- | --------------------------------------------------------------------------- |
-| Feature                                | Expectation                                                                                         | Test Performed                      | Outcome                                                                     |
-|
-
-
 
 ### Browser Compatibility
 
@@ -131,28 +137,5 @@
 - **Bug 1:** There was an issue with the snakes and ladders game, when players landed on the same square, only one marker was visible.
   - **Fix:** It was a simple case of offsetting the marker in the CSS to display them stacked on top of one another.
 
-- **Bug 2:** Chess game winning message and scoreboard do not function.
-  - **Fix:** No permenant fix has been implemented as of yet, temporary workaround has been added to allow players to reset the board peices opon a king being taken off the board.
-
-
-
-
-
-
-<!-- things to look up
-
-dom conetnt on load
-jshint
-line 99, function inside funtion
-
-/* jshint esversion: 11 */
-
-
-Juliia_mentor
-  6:43 PM
-https://www.youtube.com/watch?v=8ext9G7xspg&t=5785s
-6:43
-https://www.youtube.com/watch?v=8ext9G7xspg&t=5785s
-6:46
-https://blog.webdevsimplified.com/2023-04/html-dialog/
-https://github.com/secarrel/Bird_Count -->
+- **Bug 2:** Chess game doesnt reset properly after a player wins.
+  - **Fix:** No permenant fix has been implemented as of yet, temporary workaround has been added to allow players to reset the board peices.
