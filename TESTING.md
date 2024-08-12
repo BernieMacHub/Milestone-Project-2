@@ -85,13 +85,13 @@
 
 [Game 1 Page](documentation/images/lh-game-one.png)
 
-[Game 2 Page](documentation/images/jshint-game-two.PNG)
+[Game 2 Page](documentation/images/lh-game-two.PNG)
 
-[Game 3 Page](documentation/images/w3-game-three.PNG)
+[Game 3 Page](documentation/images/lh-game-three.png)
 
-[Contact Us Page](documentation/images)
+[Contact Us Page](documentation/images/lh-contact-form.png)
 
-[Response Page](documentation/images)
+[Response Page](documentation/images/lh-response.png)
 
 ## Manual Testing
 
