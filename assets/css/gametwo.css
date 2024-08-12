@@ -2,26 +2,26 @@
 *,
 *::after,
 *::before {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 /* Root variables */
 :root {
-  --bg-primary: black;
-  --bg-secondary: white;
-  --bg-alternate: silver;
-  --txt-primary: white;
-  --txt-secondary: black;
-  --txt-alternate: silver;
-  --container-bg: linear-gradient(to bottom right,rgba(0, 19, 255, 0.8) ,rgba(255, 19, 0, 0.8) );
-  --container-bgr: linear-gradient(to top left, rgba(0, 19, 255, 0.8) ,rgba(255, 19, 0, 0.8) );
-  --alternate-bg: linear-gradient(to bottom right,rgba(255, 19, 0, 0.8) ,rgba(0, 255, 0, 0.8) );
-  --alternate-bgr: linear-gradient(to top left,rgba(255, 19, 0, 0.8) ,rgba(0, 255, 0, 0.8) );
-  --alternate-two-bg: linear-gradient(to bottom right,rgb(199, 182, 165) ,rgb(112, 47, 49) );
-  --alternate-two-bgr: linear-gradient(to top left,rgb(199, 182, 165) ,rgb(112, 47, 49) );
-  /* Defining root variables for grid and mark sizes */
-  --grid-size: 100px;
-  --marker-size: calc(var(--grid-size) * 0.9);
+    --bg-primary: black;
+    --bg-secondary: white;
+    --bg-alternate: silver;
+    --txt-primary: white;
+    --txt-secondary: black;
+    --txt-alternate: silver;
+    --container-bg: linear-gradient(to bottom right, rgba(0, 19, 255, 0.8), rgba(255, 19, 0, 0.8));
+    --container-bgr: linear-gradient(to top left, rgba(0, 19, 255, 0.8), rgba(255, 19, 0, 0.8));
+    --alternate-bg: linear-gradient(to bottom right, rgba(255, 19, 0, 0.8), rgba(0, 255, 0, 0.8));
+    --alternate-bgr: linear-gradient(to top left, rgba(255, 19, 0, 0.8), rgba(0, 255, 0, 0.8));
+    --alternate-two-bg: linear-gradient(to bottom right, rgb(199, 182, 165), rgb(112, 47, 49));
+    --alternate-two-bgr: linear-gradient(to top left, rgb(199, 182, 165), rgb(112, 47, 49));
+    /* Defining root variables for grid and mark sizes */
+    --grid-size: 100px;
+    --marker-size: calc(var(--grid-size) * 0.9);
 }
 
 /* Game 2 */
@@ -31,7 +31,7 @@ game2.html main {
     justify-content: center;
     align-items: center;
     height: 100vh;
-  }
+}
 
 .grid {
     position: relative;
@@ -47,7 +47,7 @@ game2.html main {
     justify-items: center;
     align-items: center;
     grid-template-columns: repeat(3, auto)
-  }
+}
 
 #game2 {
     display: flex;
@@ -163,18 +163,18 @@ game2.html main {
 }
 
 #team-red {
-    color: red;
-    font-weight: bold;
+    color: red !important;
+    font-weight: bold !important;
 }
 
 #team-blue {
-    color: blue;
-    font-weight: bold;
+    color: blue !important;
+    font-weight: bold !important;
 }
 
 #team-green {
-    color: green;
-    font-weight: bold;
+    color: green !important;
+    font-weight: bold !important;
 }
 
 #tog {

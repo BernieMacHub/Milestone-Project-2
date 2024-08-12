@@ -35,24 +35,31 @@
 
 [W3C Validator](https://validator.w3.org/) has been used to ensure the validity of the HTML markup across the project.
 
-- [Index/Home](documentation/images/w3-index.PNG) - Issue and Resolution.
-- [Game one](documentation/images/w3-game-one.PNG) - Issue and Resolution.
-- [Game two](documentation/images/w3-game-two.PNG) - Issue and Resolution.
-- [Game three](documentation/images/w3-game-three.PNG) - Issue and Resolution.
-- [games](documentation/images/w3-games.PNG) - Issue and Resolution.
-- [Contact form](documentation/images/w3-contact-form.PNG) - Issue and Resolution.
-- [Contact response](documentation/images/w3-response.PNG) - Issue and Resolution.
+- [Index/Home](documentation/images/w3-index.PNG) - No Errors or warnings.
+- [Game one](documentation/images/w3-game-one.PNG) - No Errors or warnings.
+- [Game two](documentation/images/w3-game-two.PNG) - No Errors or warnings.
+- [Game three](documentation/images/w3-game-three.PNG) - No Errors or warnings.
+- [games](documentation/images/w3-games.PNG) - No Errors or warnings.
+- [Contact form](documentation/images/w3-contact-form.PNG) - No Errors or warnings.
+- [Contact response](documentation/images/w3-response.PNG) - No Errors or warnings.
 
 ### W3 Jigsaw - CSS
 
-- [Game one CSS](documentation/images/) - CSS for Game one.
-- Issue and Resolution.
+- [Style CSS](documentation/images/w3-jigsaw-style.PNG) - CSS for All pages.
+- No Errors or issues
+- Warnings have been ignored, no impact on website functionality.
 
-- [Game two CSS](documentation/images/) - CSS for Game two.
-- Issue and Resolution.
+- [Game one CSS](documentation/images/w3-jigsaw-game-one.PNG) - CSS for Game one.
+- No Errors or issues
+- Warnings have been ignored, no impact on website functionality.
 
-- [Game three CSS](documentation/images/)  - CSS for Game three.
+- [Game two CSS](documentation/images/w3-jigsaw-game-two.PNG) - CSS for Game two.
 - Issue and Resolution.
+- No Errors or issues
+
+- [Game three CSS](documentation/images/w3-jigsaw-game-three.PNG)  - CSS for Game three.
+- Issue and Resolution.
+- No Errors or issues
 
 ### JShint - Javascript
 
