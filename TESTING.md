@@ -35,23 +35,23 @@
 
 [W3C Validator](https://validator.w3.org/) has been used to ensure the validity of the HTML markup across the project.
 
-- [Index/Home](path)  - Issue and Resolution.
-- [Game one](path)  - Issue and Resolution.
-- [Game two](path)  - Issue and Resolution.
-- [Game three](path)  - Issue and Resolution.
-- [games](path)  - Issue and Resolution.
-- [Contact form](path)  - Issue and Resolution.
-- [Contact response](path)  - Issue and Resolution.
+- [Index/Home](documentation/images/w3-index.PNG) - Issue and Resolution.
+- [Game one](documentation/images/w3-game-one.PNG) - Issue and Resolution.
+- [Game two](documentation/images/w3-game-two.PNG) - Issue and Resolution.
+- [Game three](documentation/images/w3-game-three.PNG) - Issue and Resolution.
+- [games](documentation/images/w3-games.PNG) - Issue and Resolution.
+- [Contact form](documentation/images/w3-contact-form.PNG) - Issue and Resolution.
+- [Contact response](documentation/images/w3-response.PNG) - Issue and Resolution.
 
 ### W3 Jigsaw - CSS
 
-- [Game one CSS](path)  - CSS for Game one.
+- [Game one CSS](documentation/images/) - CSS for Game one.
 - Issue and Resolution.
 
-- [Game two CSS](path)  - CSS for Game two.
+- [Game two CSS](documentation/images/) - CSS for Game two.
 - Issue and Resolution.
 
-- [Game three CSS](path)   - CSS for Game three.
+- [Game three CSS](documentation/images/)  - CSS for Game three.
 - Issue and Resolution.
 
 ### JShint - Javascript
