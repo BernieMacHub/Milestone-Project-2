@@ -93,6 +93,11 @@
 - **Test:** Tested all completed games to make sure all functions are working correctly.
 - **Result:** All Games are functional and working correctly (The Chess game is still underdevelopment and doesnt have any form of winning message or scoreboard functionality at this point)."
 
+| Feature                                | Expectation                                                                                         | Test Performed                      | Outcome                                                                     |
+| -------------------------------------- | --------------------------------------------------------------------------------------------------- | ----------------------------------- | --------------------------------------------------------------------------- |
+| Feature                                | Expectation                                                                                         | Test Performed                      | Outcome                                                                     |
+|
+
 
 
 ### Browser Compatibility
