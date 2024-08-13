@@ -83,15 +83,15 @@ function handleBoxClick(box) {
     const isEmptyBox = box.innerText.length === 0;
 
     if (box.style.backgroundColor === 'pink') {
-        clearHighlights();  // Clear all highlights when clicking on the same piece again
+        clearHighlights(); // Clear all highlights when clicking on the same piece again
     } else if (['green', 'aqua'].includes(box.style.backgroundColor)) {
-        movePiece(box);  // Move the piece if a valid square is clicked
+        movePiece(box); // Move the piece if a valid square is clicked
         tog++; // Switch turns
-        clearHighlights();  // Clear all highlights after a move
-        insertImage();  // Re-insert images to update the board
+        clearHighlights(); // Clear all highlights after a move
+        insertImage(); // Re-insert images to update the board
     } else {
-        clearHighlights();  // Clear previous highlights
-        highlightPaths(box);  // Highlight the paths for the selected piece
+        clearHighlights(); // Clear previous highlights
+        highlightPaths(box); // Highlight the paths for the selected piece
     }
 }
 
@@ -100,7 +100,7 @@ function handleBoxClick(box) {
  */
 function clearHighlights() {
     document.querySelectorAll('.box').forEach(box => {
-        colorBoard();  // Reset the color of the board
+        colorBoard(); // Reset the color of the board
     });
 }
 
@@ -118,14 +118,14 @@ function movePiece(targetBox) {
                 kingCaptured = true;
                 winner = tog % 2 !== 0 ? 'White' : 'Black'; // Determine the winner based on the current turn
             }
-            targetBox.innerText = pinkBox.innerText;  // Move the piece to the new box
-            pinkBox.innerText = '';  // Clear the piece from the old box
+            targetBox.innerText = pinkBox.innerText; // Move the piece to the new box
+            pinkBox.innerText = ''; // Clear the piece from the old box
         }
     });
 
     if (kingCaptured) {
         updateScore(winner); // Update the scoreboard
-        showWinningMessage(winner);  // Display the winning message
+        showWinningMessage(winner); // Display the winning message
     }
 }
 
@@ -163,7 +163,7 @@ function updateScore(winner) {
 function restartGame() {
     // Reset the board state
     document.querySelectorAll('.box').forEach(box => {
-        box.innerText = '';  // Clear piece from all boxes
+        box.innerText = ''; // Clear piece from all boxes
         colorBoard(); // Recolor the board
     });
 
@@ -200,7 +200,7 @@ function highlightPaths(box) {
     const pieceColor = pieceType.charAt(0); // Extract the color (W or B)
     const pieceName = pieceType.slice(1); // Extract the name of the piece (pawn, king, etc.)
 
-    if ((isWhiteTurn && pieceColor === 'W') || (!isWhiteTurn && pieceColor === 'B')) {
+    if ((isWhiteTurn && pieceColor === 'w') || (!isWhiteTurn && pieceColor === 'b')) {
         box.style.backgroundColor = 'pink'; // Highlight the selected piece's box
 
         switch (pieceName) {
@@ -281,8 +281,8 @@ function highlightKingPaths(position) {
 function highlightRookPaths(position) {
     highlightDirectionalMoves(position, 100); // Vertical up
     highlightDirectionalMoves(position, -100); // Vertical down
-    highlightDirectionalMoves(position, 1);   // Horizontal right
-    highlightDirectionalMoves(position, -1);  // Horizontal left
+    highlightDirectionalMoves(position, 1); // Horizontal right
+    highlightDirectionalMoves(position, -1); // Horizontal left
 }
 
 /**
@@ -291,7 +291,7 @@ function highlightRookPaths(position) {
 function highlightBishopPaths(position) {
     highlightDirectionalMoves(position, 101); // Diagonal right-up
     highlightDirectionalMoves(position, -101); // Diagonal left-down
-    highlightDirectionalMoves(position, 99);  // Diagonal left-up
+    highlightDirectionalMoves(position, 99); // Diagonal left-up
     highlightDirectionalMoves(position, -99); // Diagonal right-down
 }
 
@@ -361,11 +361,11 @@ function highlightMove(position, color, mustBeEmpty = false) {
         if (targetPiece.length > 0) {
             const pieceColor = targetPiece.charAt(0);
             const isWhiteTurn = tog % 2 !== 0;
-            const currentColor = isWhiteTurn ? 'W' : 'B';
+            const currentColor = isWhiteTurn ? 'w' : 'b';
 
             if (pieceColor === currentColor) return false; // Prevent landing on a square occupied by own piece
         }
-        
+
         targetBox.style.backgroundColor = color;
         return true;
     }

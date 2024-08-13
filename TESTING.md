@@ -1,7 +1,8 @@
 # Testing
 
-## Table of Contents
+![Responsive-Image](documentation/images/cmg-responsive-mockup.PNG)
 
+---
 ## Table of Contents
 
 - [Automated Testing](#automated-testing)

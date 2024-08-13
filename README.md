@@ -1,5 +1,10 @@
 # Milestone Project 2 - [Captain Mac Games]
 
+![Responsive-Image](documentation/images/cmg-responsive-mockup.PNG)
+
+---
+
+
 ## Table of Contents
 1. [Overview](#overview)
 2. [User Experience (UX)](#user-experience-ux)
