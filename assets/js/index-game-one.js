@@ -1,10 +1,15 @@
-/ *jshint esversion 6 */
+/*jshint esversion: 6 */
 
-// Constants for the X and O classes
+/**
+ * Constants representing the classes for X and O players.
+ */
 const X_CLASS = 'x';
 const CIRCLE_CLASS = 'circle';
 
-// Winning combinations as an array of arrays
+/**
+ * Array of arrays representing the possible winning combinations.
+ * Each subarray contains the grid indices that must be occupied for a win.
+ */
 const WINNING_COMBINATIONS = [
     [0, 1, 2],
     [3, 4, 5],
@@ -16,74 +21,90 @@ const WINNING_COMBINATIONS = [
     [2, 4, 6]
 ];
 
-// Selecting all the grids, board, and the winning message elements
+/**
+ * Selectors for game elements: grid cells, board, winning message,
+ * restart button, and score elements for players and draws.
+ */
 const grids = document.querySelectorAll('[data-grid]');
 const board = document.getElementById('board');
 const winningMessageElement = document.getElementById('winning-message');
 const restartButton = document.getElementById('restart-button');
 const winningMessageTextElement = document.querySelector('[data-winning-message-text]');
-
-// Selecting the score elements
 const playerXScoreElement = document.getElementById('player-x-score');
 const playerOScoreElement = document.getElementById('player-o-score');
 const drawScoreElement = document.getElementById('draw-score');
 
-// Variables to keep track of turns and scores
+/**
+ * Variables to track the game state: current player's turn and the scores.
+ */
 let circleTurn;
 let playerXScore = 0;
 let playerOScore = 0;
 let drawScore = 0;
 
-// Initializing the game
+/**
+ * Initializes the game state and starts a new game.
+ * Resets grid cells, removes previous event listeners, and sets the hover effect.
+ */
 startGame();
 
-// Adding an event listener for the restart button
+/**
+ * Event listener for the restart button, triggers a new game when clicked.
+ */
 restartButton.addEventListener('click', startGame);
 
-// Function to start the game
+/**
+ * Starts the game by resetting the board, setting the first turn to X,
+ * and adding event listeners to each grid for user interaction.
+ */
 function startGame() {
     circleTurn = false;
     grids.forEach(grid => {
-        // Remove existing class already marked on the board
+        // Reset grid classes and event listeners
         grid.classList.remove(X_CLASS, CIRCLE_CLASS);
-        // Remove existing click listeners
         grid.removeEventListener('click', handleClick);
-        // Adding a new click listener
         grid.addEventListener('click', handleClick, {
             once: true
         });
     });
-    // Setting the initial board hover class
+    // Set the initial hover effect based on the turn
     setBoardHoverClass();
-    // Hiding the winning message
+    // Hide the winning message
     winningMessageElement.classList.remove('show');
 }
 
-// Function to handle click events on grids
+/**
+ * Handles the logic when a grid is clicked. It places the current player's mark,
+ * checks for a win or draw, and updates the game state accordingly.
+ * 
+ * @param {Event} e - The click event object.
+ */
 function handleClick(e) {
     const grid = e.target;
-    // Determining the current class (X or O) based on the turn
     const currentClass = circleTurn ? CIRCLE_CLASS : X_CLASS;
-    // Placing the mark on the clicked grid
+
+    // Place the current player's mark on the clicked grid
     placeMark(grid, currentClass);
-    // Checking if the current move results in a win
+
+    // Check if the current move results in a win or draw
     if (checkWin(currentClass)) {
         endGame(false);
         updateScore(currentClass);
-    }
-    // Checking if the game is a draw
-    else if (isDraw()) {
+    } else if (isDraw()) {
         endGame(true);
         updateScore('draw');
-    }
-    // Switching turns and updating the board hover class
-    else {
+    } else {
+        // Switch turns and update the hover effect
         swapTurns();
         setBoardHoverClass();
     }
 }
 
-// Function to end the game
+/**
+ * Ends the game and displays the appropriate win or draw message.
+ * 
+ * @param {boolean} draw - Whether the game ended in a draw.
+ */
 function endGame(draw) {
     if (draw) {
         winningMessageTextElement.innerText = 'Draw!';
@@ -93,7 +114,11 @@ function endGame(draw) {
     winningMessageElement.classList.add('show');
 }
 
-// Function to update the score
+/**
+ * Updates the score for the current player or for a draw.
+ * 
+ * @param {string} winner - The class of the winning player or 'draw' for a draw.
+ */
 function updateScore(winner) {
     if (winner === X_CLASS) {
         playerXScore++;
@@ -107,25 +132,37 @@ function updateScore(winner) {
     }
 }
 
-// Function to check for a draw
+/**
+ * Checks if all grid cells are filled and no player has won, indicating a draw.
+ * 
+ * @returns {boolean} - Returns true if the game is a draw.
+ */
 function isDraw() {
     return [...grids].every(grid => {
-        return grid.classList.contains(X_CLASS) ||
-            grid.classList.contains(CIRCLE_CLASS);
+        return grid.classList.contains(X_CLASS) || grid.classList.contains(CIRCLE_CLASS);
     });
 }
 
-// Function to place the mark on a grid
+/**
+ * Adds the current player's class (X or O) to the selected grid.
+ * 
+ * @param {Element} grid - The grid element that was clicked.
+ * @param {string} currentClass - The class of the current player (X or O).
+ */
 function placeMark(grid, currentClass) {
     grid.classList.add(currentClass);
 }
 
-// Function to swap turns
+/**
+ * Switches the turn between the X and O players.
+ */
 function swapTurns() {
     circleTurn = !circleTurn;
 }
 
-// Function to set the board hover class
+/**
+ * Sets the hover effect on the board to indicate the current player's turn.
+ */
 function setBoardHoverClass() {
     board.classList.remove(X_CLASS, CIRCLE_CLASS);
     if (circleTurn) {
@@ -135,7 +172,12 @@ function setBoardHoverClass() {
     }
 }
 
-// Function to check for a win
+/**
+ * Checks if the current player has won the game by matching one of the winning combinations.
+ * 
+ * @param {string} currentClass - The class of the current player (X or O).
+ * @returns {boolean} - Returns true if the current player has won.
+ */
 function checkWin(currentClass) {
     return WINNING_COMBINATIONS.some(combination => {
         return combination.every(index => {

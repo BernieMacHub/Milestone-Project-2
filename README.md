@@ -133,5 +133,5 @@ To deploy the project locally:
 
 ## Acknowledgements
 - I would like to thank UCP-15 Discord - For always providing feedback on my project.
-- Iuliia Konovalova - My Code Institute mentor.
+- Juliia Konovalova - My Code Institute mentor.
 - Fellow students - working together in a discord to share ideas and give feedback on each other's work.

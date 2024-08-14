@@ -48,7 +48,7 @@
                 <div class="centered rubik-mono-one-regular">
                     <!-- Home -->
                     <span class="nav-item">
-                        <a class="nav-link active" href="index.html" aria-label="Home page"> Home</a>
+                        <a class="nav-link" href="index.html" aria-label="Home page"> Home</a>
                     </span>
                     <!-- Games -->
                     <span class="nav-item">
@@ -159,17 +159,20 @@
                         <li class="box" id="b108">wrook</li>
                     </ul>
                 </div>
-                <div id="restart-button-container">
-                    <a href="game3.html" class="btn btn-primary rubik-mono-one-regular">Reset the Board!</a>
-                </div>
             </div>
         </div>
-        <div class="rules">
+        <!-- Hidden while under development-->
+        <div class="rules hidden">
             <div class="scoreboard rubik-mono-one-regular">
                 <h4>Scoreboard</h4>
                 <p id="white-score">White total wins: 0</p>
                 <p id="black-score">Black total wins: 0</p>
             </div>
+        </div>
+        <!-- Hidden while under development-->
+        <div class="rules hidden" id="restart-button-container">
+            <a href="game3.html" class="btn btn-primary rubik-mono-one-regular">Reset the scoreboard!</a>
+        </div>
         </div>
     </main>
     <aside id="small-device-message">
@@ -187,17 +190,17 @@
             <!-- Section: Social media -->
             <div id="social-links" class="mb-0">
                 <!-- Facebook -->
-                <a data-mdb-ripple-init class="btn btn-outline btn-floating m-1" id="facebook"
+                <a data-mdb-ripple-init class="btn btn-outline btn-floating m-1 social-links" id="facebook"
                     href="https://facebook.com" target="_blank" aria-label="Click here to go to Facebook"
-                    role="button"><i class="fab fa-facebook-f"></i></a>
+                    role="button"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
                 <!-- Linkedin -->
-                <a data-mdb-ripple-init class="btn btn-outline btn-floating m-1" id="linkedin"
+                <a data-mdb-ripple-init class="btn btn-outline btn-floating m-1 social-links" id="linkedin"
                     href="https://linkedin.com" target="_blank" aria-label="Click here to go to LinkedIn"
-                    role="button"><i class="fab fa-linkedin-in"></i></a>
+                    role="button"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
                 <!-- Github -->
-                <a data-mdb-ripple-init class="btn btn-outline btn-floating m-1" id="github"
+                <a data-mdb-ripple-init class="btn btn-outline btn-floating m-1 social-links" id="github"
                     href="https://github.com/CaptainMacHub" target="_blank" aria-label="Click here to go to GitHub"
-                    role="button"><i class="fab fa-github"></i></a>
+                    role="button"><i class="fab fa-github" aria-hidden="true"></i></a>
             </div>
         </div>
         <!-- Copyright -->

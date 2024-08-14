@@ -112,7 +112,16 @@ game2.html main {
 
 #diceBtn {
     z-index: 99;
-    margin: 30px;
+    margin: 10px;
+    cursor: pointer;
+    background-color: red;
+    border-radius: 5px;
+    width: 200px;
+}
+
+#diceBtn:hover {
+    z-index: 99;
+    margin: 10px;
     cursor: pointer;
     background-color: red;
     border-radius: 5px;

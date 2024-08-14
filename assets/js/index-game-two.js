@@ -92,6 +92,14 @@ function handleSnakesAndLadders(position) {
 /** 
  *  Event listener for dice roll button
  */
+document.getElementById("diceBtn").addEventListener("mouseover", function () {
+    this.style.border = "2px solid yellow"; // Add yellow border on hover
+});
+
+document.getElementById("diceBtn").addEventListener("mouseout", function () {
+    this.style.border = "2px solid transparent"; // Remove border on mouse out
+});
+
 document.getElementById("diceBtn").addEventListener("click", function () {
     let num = Math.floor(Math.random() * 6) + 1; // Roll a dice (1-6)
     document.getElementById("dice").innerHTML = num; // Update dice value

@@ -40,15 +40,15 @@
         <div>
             <div>
                 <a class="navbar-brand centered rubik-mono-one-regular" href="index.html" aria-label="Home page">
-                    <i class="fa-solid fa-skull-crossbones"></i> Captain Mac Games <i
-                        class="fa-solid fa-skull-crossbones"></i>
+                    <i class="fa-solid fa-skull-crossbones" aria-hidden="true"></i> Captain Mac Games <i
+                        class="fa-solid fa-skull-crossbones" aria-hidden="true"></i>
                 </a>
             </div>
             <div>
                 <div class="centered rubik-mono-one-regular">
                     <!-- Home -->
                     <span class="nav-item">
-                        <a class="nav-link active" href="index.html" aria-label="Home page"> Home</a>
+                        <a class="nav-link" href="index.html" aria-label="Home page"> Home</a>
                     </span>
                     <!-- Games -->
                     <span class="nav-item">
@@ -58,7 +58,7 @@
                     <!-- Contact -->
                     <span class="nav-item">
                         <a class="nav-link" aria-current="page" href="suggestion-form.html"
-                            aria-label="Suggestion page">
+                            aria-label="Suggestions page">
                             Suggestions</a>
                     </span>
                 </div>
@@ -71,27 +71,27 @@
         <h1 class="title rubik-mono-one-regular"><strong class="team-blue">Noughts</strong> & <strong
                 class="team-red">Crosses</strong></h1>
         <div class="game-container">
-            <div class="board" id="board">
-                <div class="grid" data-grid></div>
-                <div class="grid" data-grid></div>
-                <div class="grid" data-grid></div>
-                <div class="grid" data-grid></div>
-                <div class="grid" data-grid></div>
-                <div class="grid" data-grid></div>
-                <div class="grid" data-grid></div>
-                <div class="grid" data-grid></div>
-                <div class="grid" data-grid></div>
+            <div class="board" id="board" aria-label="Game board for Noughts and Crosses">
+                <div class="grid" data-grid aria-label="Game grid cell"></div>
+                <div class="grid" data-grid aria-label="Game grid cell"></div>
+                <div class="grid" data-grid aria-label="Game grid cell"></div>
+                <div class="grid" data-grid aria-label="Game grid cell"></div>
+                <div class="grid" data-grid aria-label="Game grid cell"></div>
+                <div class="grid" data-grid aria-label="Game grid cell"></div>
+                <div class="grid" data-grid aria-label="Game grid cell"></div>
+                <div class="grid" data-grid aria-label="Game grid cell"></div>
+                <div class="grid" data-grid aria-label="Game grid cell"></div>
             </div>
-            <div class="winning-message" id="winning-message">
+            <div class="winning-message" id="winning-message" aria-live="assertive">
                 <div data-winning-message-text></div>
-                <button id="restart-button">Click here to play another Round!</button>
+                <button id="restart-button" aria-label="Restart game">Click here to play another Round!</button>
             </div>
         </div>
         <div class="rules">
             <h2 class="rubik-mono-one-regular">How to Play Noughts and Crosses</h2>
             <h3>Two players take turn marking the board with either X or O markers in an attempt to line up 3 markers
                 of
-                your own horizonally, vertically and diagonally.</h3>
+                your own horizontally, vertically, and diagonally.</h3>
             <ul class="rules">
                 <li>The player who succeeds in placing three respective marks in a horizontal, vertical, or diagonal
                     row
@@ -106,6 +106,9 @@
                 <p id="player-o-score"><strong class="team-blue">Noughts</strong> total score is: 0</p>
                 <p id="draw-score">Total amount of draws: 0</p>
             </div>
+            <div id="restart-button-container">
+                <a href="game1.html" class="btn btn-primary rubik-mono-one-regular">Reset the scoreboard!</a>
+            </div>
         </div>
     </main>
 
@@ -114,20 +117,20 @@
         <!-- Grid container -->
         <div id="footer-container" class="container p-1">
             <!-- Section: Social media -->
-            <section id="social-links" class="mb-0 ">
+            <div id="social-links" class="mb-0" aria-label="Social media links">
                 <!-- Facebook -->
-                <a data-mdb-ripple-init class="btn btn-outline btn-floating m-1" id="facebook"
-                    href="https://facebook.com" target="_blank" aria-label="Click here to go to Facebook"
-                    role="button"><i class="fab fa-facebook-f"></i></a>
+                <a data-mdb-ripple-init class="btn btn-outline btn-floating m-1 social-links" id="facebook"
+                    href="https://facebook.com" target="_blank" aria-label="Go to Facebook" role="button"><i
+                        class="fab fa-facebook-f" aria-hidden="true"></i></a>
                 <!-- Linkedin -->
-                <a data-mdb-ripple-init class="btn btn-outline btn-floating m-1" id="linkedin"
-                    href="https://linkedin.com" target="_blank" aria-label="Click here to go to LinkedIn"
-                    role="button"><i class="fab fa-linkedin-in"></i></a>
+                <a data-mdb-ripple-init class="btn btn-outline btn-floating m-1 social-links" id="linkedin"
+                    href="https://linkedin.com" target="_blank" aria-label="Go to LinkedIn" role="button"><i
+                        class="fab fa-linkedin-in" aria-hidden="true"></i></a>
                 <!-- Github -->
-                <a data-mdb-ripple-init class="btn btn-outline btn-floating m-1" id="github"
-                    href="https://github.com/CaptainMacHub" target="_blank" aria-label="Click here to go to GitHub"
-                    role="button"><i class="fab fa-github"></i></a>
-            </section>
+                <a data-mdb-ripple-init class="btn btn-outline btn-floating m-1 social-links" id="github"
+                    href="https://github.com/CaptainMacHub" target="_blank" aria-label="Go to GitHub" role="button"><i
+                        class="fab fa-github" aria-hidden="true"></i></a>
+            </div>
         </div>
         <!-- Copyright -->
         <div class="text-center p-1">

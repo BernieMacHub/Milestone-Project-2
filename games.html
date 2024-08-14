@@ -47,16 +47,16 @@
         <div class="centered rubik-mono-one-regular">
           <!-- Home -->
           <span class="nav-item">
-            <a class="nav-link active" href="index.html" aria-label="Home page"> Home</a>
+            <a class="nav-link" href="index.html" aria-label="Home page"> Home</a>
           </span>
           <!-- Games -->
           <span class="nav-item">
-            <a class="nav-link" href="games.html" aria-label="Games page"><i class="fa-solid fa-gamepad"
+            <a class="nav-link active" href="games.html" aria-label="Games page"><i class="fa-solid fa-gamepad"
                 aria-hidden="true"></i> Games</a>
           </span>
           <!-- Contact -->
           <span class="nav-item">
-            <a class="nav-link" aria-current="page" href="contact-form.html" aria-label="Suggestion page"> Contact
+            <a class="nav-link" aria-current="page" href="contact-form.html" aria-label="Contact page"> Contact
               Us</a>
           </span>
         </div>
@@ -65,22 +65,23 @@
   </header>
 
   <!-- Main Section -->
-  <main id="hide-on-small-device">
-    <section class="index-main centered">
-      <div class="game-card">
+  <main>
+    <section class="index-main centered noughts-and-crosses-section">
+      <div class="game-card" aria-label="Noughts & Crosses Game Card">
         <div class="card text-center">
           <div class="card-header rubik-mono-one-regular" id="game-one-card-header">
             New!
           </div>
           <div class="video-container">
-            <video autoplay muted loop playsinline>
+            <video autoplay muted loop playsinline aria-label="Noughts and Crosses game preview">
               <source src="assets/videos/noughtsandcrosses.mp4" type="video/mp4" />
             </video>
             <div class="card-body">
               <h5 class="card-title rubik-mono-one-regular">Noughts & Crosses</h5>
               <p class="card-text">This is the first game I developed and also commonly known as Tic-Tac-Toe. It
                 consists of two players playing through rounds to see who can get the most wins!.</p>
-              <a href="game1.html" class="btn btn-primary rubik-mono-one-regular">Play the Game</a>
+              <a href="game1.html" class="btn btn-primary rubik-mono-one-regular"
+                aria-label="Play Noughts & Crosses">Play the Game</a>
             </div>
           </div>
           <div class="card-footer text-body-secondary rubik-mono-one-regular" id="game-one-card-footer">
@@ -89,21 +90,22 @@
         </div>
       </div>
     </section>
-    <section class="index-main centered">
-      <div class="game-card">
+    <section class="index-main centered snakes-and-ladders-section">
+      <div class="game-card" aria-label="Snakes and Ladders Game Card">
         <div class="card text-center">
           <div class="card-header rubik-mono-one-regular" id="game-two-card-header">
             New!
           </div>
           <div class="video-container">
-            <video autoplay muted loop playsinline>
+            <video autoplay muted loop playsinline aria-label="Snakes and Ladders game preview">
               <source src="assets/videos/snakesandladders.mp4" type="video/mp4" />
             </video>
             <div class="card-body">
               <h5 class="card-title rubik-mono-one-regular">Snakes and Ladders</h5>
               <p class="card-text">The second game I made, which is a personal favourite and the one I am most proud of,
                 with minimal CSS input compared to the first game I made.</p>
-              <a href="game2.html" class="btn btn-primary rubik-mono-one-regular">Play the Game</a>
+              <a href="game2.html" class="btn btn-primary rubik-mono-one-regular"
+                aria-label="Play Snakes and Ladders">Play the Game</a>
             </div>
           </div>
           <div class="card-footer text-body-secondary rubik-mono-one-regular" id="game-two-card-footer">
@@ -112,22 +114,23 @@
         </div>
       </div>
     </section>
-    <section class="index-main centered">
-      <div class="game-card">
+    <section class="index-main centered chess-section">
+      <div class="game-card" aria-label="Chess Game Card">
         <div class="card text-center">
           <div class="card-header rubik-mono-one-regular" id="game-three-card-header">
             In Development!
           </div>
           <div class="video-container">
-            <video autoplay muted loop playsinline>
+            <video autoplay muted loop playsinline aria-label="Chess game preview">
               <source src="assets/videos/chess.mp4" type="video/mp4" />
             </video>
-            <div class="card-body">
+            <div class="card-body chess-div">
               <h5 class="card-title rubik-mono-one-regular">Chess</h5>
               <p class="card-text">This game is the final game I wanted to incorporate, but due to time constraints and
                 delays, I have paused the development of this game but have left it in place for people to see the
                 current progress.</p>
-              <a href="game3.html" class="btn btn-primary rubik-mono-one-regular">Play the Game</a>
+              <a href="game3.html" class="btn btn-primary rubik-mono-one-regular" aria-label="Play Chess">Play the
+                Game</a>
             </div>
           </div>
           <div class="card-footer text-body-secondary rubik-mono-one-regular" id="game-three-card-footer">
@@ -137,7 +140,7 @@
       </div>
     </section>
   </main>
-  <aside id="small-device-message">
+  <aside id="small-device-message" aria-label="Message for small devices">
     <p>Please use a tablet device or computer to play this game.</p>
   </aside>
   <!-- Footer -->
@@ -145,19 +148,19 @@
     <!-- Grid container -->
     <div id="footer-container" class="container p-1">
       <!-- Section: Social media -->
-      <div id="social-links" class="mb-0">
+      <div id="social-links" class="mb-0" aria-label="Social media links">
         <!-- Facebook -->
-        <a data-mdb-ripple-init class="btn btn-outline btn-floating m-1" id="facebook" href="https://facebook.com"
-          target="_blank" aria-label="Click here to go to Facebook" role="button"><i class="fab fa-facebook-f"
-            aria-hidden="true"></i></a>
+        <a data-mdb-ripple-init class="btn btn-outline btn-floating m-1 social-links" id="facebook"
+          href="https://facebook.com" target="_blank" aria-label="Go to Facebook" role="button"><i
+            class="fab fa-facebook-f" aria-hidden="true"></i></a>
         <!-- Linkedin -->
-        <a data-mdb-ripple-init class="btn btn-outline btn-floating m-1" id="linkedin" href="https://linkedin.com"
-          target="_blank" aria-label="Click here to go to LinkedIn" role="button"><i class="fab fa-linkedin-in"
-            aria-hidden="true"></i></a>
+        <a data-mdb-ripple-init class="btn btn-outline btn-floating m-1 social-links" id="linkedin"
+          href="https://linkedin.com" target="_blank" aria-label="Go to LinkedIn" role="button"><i
+            class="fab fa-linkedin-in" aria-hidden="true"></i></a>
         <!-- Github -->
-        <a data-mdb-ripple-init class="btn btn-outline btn-floating m-1" id="github"
-          href="https://github.com/CaptainMacHub" target="_blank" aria-label="Click here to go to GitHub"
-          role="button"><i class="fab fa-github" aria-hidden="true"></i></a>
+        <a data-mdb-ripple-init class="btn btn-outline btn-floating m-1 social-links" id="github"
+          href="https://github.com/CaptainMacHub" target="_blank" aria-label="Go to GitHub" role="button"><i
+            class="fab fa-github" aria-hidden="true"></i></a>
       </div>
     </div>
     <!-- Copyright -->

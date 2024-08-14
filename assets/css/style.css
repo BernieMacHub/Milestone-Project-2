@@ -38,6 +38,34 @@
   background: var(--bg-alternate) !important;
 }
 
+.form-btn-primary {
+  border-color: none;
+  color: black !important;
+  background: red !important;
+}
+
+.nav-link:hover {
+  border: 1px solid var(--bg-alternate);
+  border-radius: 25%;
+  color: var(--txt-alternate) !important;
+}
+
+.form-btn-primary:hover {
+  border-color: yellow;
+  color: black !important;
+  background: greenyellow !important;
+}
+
+.social-links:hover {
+  border: 1px solid var(--bg-alternate) !important;
+  border-radius: 25% !important;
+  color: var(--txt-alternate) !important;
+}
+
+/* .scoreboard-btn {
+  width: 20px !important;
+} */
+
 .rubik-mono-one-regular {
   font-family: "Rubik Mono One", monospace;
   font-weight: 400;
@@ -244,6 +272,14 @@ footer {
     display: flex;
     justify-content: center;
     margin: auto;
+  }
+
+  .snakes-and-ladders-section {
+    display: none;
+  }
+
+  .chess-section {
+    display: none;
   }
 }
 

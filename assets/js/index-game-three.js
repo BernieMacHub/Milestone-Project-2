@@ -9,6 +9,7 @@ let tog = 1; // 1 for White's turn, 0 for Black's turn
 const winningMessageElement = document.getElementById('winning-message-three');
 const restartButton = document.getElementById('restart-button-three');
 const winningMessageTextElement = document.querySelector('[data-winning-message-text-three]');
+const turnIndicatorElement = document.getElementById('tog'); // Turn indicator
 
 /**
  * Inserting images into the chess board.
@@ -87,6 +88,7 @@ function handleBoxClick(box) {
     } else if (['green', 'aqua'].includes(box.style.backgroundColor)) {
         movePiece(box); // Move the piece if a valid square is clicked
         tog++; // Switch turns
+        whosTurn(); // Update the turn indicator
         clearHighlights(); // Clear all highlights after a move
         insertImage(); // Re-insert images to update the board
     } else {
@@ -161,29 +163,12 @@ function updateScore(winner) {
  * Restart the game without reloading the page.
  */
 function restartGame() {
-    // Reset the board state
-    document.querySelectorAll('.box').forEach(box => {
-        box.innerText = ''; // Clear piece from all boxes
-        colorBoard(); // Recolor the board
-    });
-
-    // Reset game state
-    tog = 1; // White's turn
-    whiteCastleAvailable = true;
-    blackCastleAvailable = true;
-    insertImage(); // Re-insert images to the board
-
-    // Hide the winning message
-    winningMessageElement.classList.remove('show');
-
-    // Re-enable moves
-    document.querySelectorAll('.box').forEach(box => {
-        box.style.pointerEvents = 'auto';
-    });
+    // Reload the current page (game3.html)
+    location.reload();
 }
 
 // Add event listener to the restart button
-document.getElementById('restart-button-three').addEventListener('click', restartGame);
+restartButton.addEventListener('click', restartGame);
 
 /**
  * Highlight possible movement paths for a selected piece.
@@ -279,20 +264,26 @@ function highlightKingPaths(position) {
  * Highlights possible moves for a rook.
  */
 function highlightRookPaths(position) {
-    highlightDirectionalMoves(position, 100); // Vertical up
-    highlightDirectionalMoves(position, -100); // Vertical down
-    highlightDirectionalMoves(position, 1); // Horizontal right
-    highlightDirectionalMoves(position, -1); // Horizontal left
+    const directions = [-100, 100, -1, 1];
+    directions.forEach(direction => {
+        for (let step = 1; step <= 7; step++) {
+            const target = position + direction * step;
+            if (!highlightMove(target, 'green')) break;
+        }
+    });
 }
 
 /**
  * Highlights possible moves for a bishop.
  */
 function highlightBishopPaths(position) {
-    highlightDirectionalMoves(position, 101); // Diagonal right-up
-    highlightDirectionalMoves(position, -101); // Diagonal left-down
-    highlightDirectionalMoves(position, 99); // Diagonal left-up
-    highlightDirectionalMoves(position, -99); // Diagonal right-down
+    const directions = [-101, -99, 99, 101];
+    directions.forEach(direction => {
+        for (let step = 1; step <= 7; step++) {
+            const target = position + direction * step;
+            if (!highlightMove(target, 'green')) break;
+        }
+    });
 }
 
 /**
@@ -311,73 +302,46 @@ function highlightKnightPaths(position) {
     moves.forEach(offset => highlightMove(position + offset, 'green'));
 }
 
-/**
- * Highlights moves in a specific direction.
- * @param {number} position - The current position of the piece.
- * @param {number} offset - The offset indicating direction of movement.
- */
-function highlightDirectionalMoves(position, offset) {
-    let steps = 1;
-    while (true) {
-        const targetPos = position + steps * offset;
-        if (!isValidPosition(targetPos)) break; // Boundary check
-
-        // Check if target position is out of bounds for specific directions
-        if (offset === 1 && (targetPos % 100) === 1) break; // Right edge
-        if (offset === -1 && (targetPos % 100) === 8) break; // Left edge
-        if (offset === 100 && (Math.floor(targetPos / 100)) === 8) break; // Top edge
-        if (offset === -100 && (Math.floor(targetPos / 100)) === 1) break; // Bottom edge
-
-        // Continue highlighting if the square is occupied by own piece but not stop
-        if (!highlightMove(targetPos, 'green', false)) break; // Stop if blocked by an enemy piece
-        steps++;
-    }
-}
 
 /**
- * Checks if a position is valid on the board.
- * @param {number} position - The position to check.
- * @returns {boolean} - True if the position is valid, false otherwise.
- */
-function isValidPosition(position) {
-    const row = Math.floor(position / 100);
-    const col = position % 100;
-    return row >= 1 && row <= 8 && col >= 1 && col <= 8;
-}
-
-/**
- * Highlights a move to a target box.
- * @param {number} position - The position to check.
+ * Highlights a move if valid.
+ * @param {number} target - The target position.
  * @param {string} color - The highlight color.
- * @param {boolean} mustBeEmpty - Whether the target box must be empty for the move to be valid.
- * @returns {boolean} - True if the move is highlighted, false otherwise.
+ * @param {boolean} [clear=false] - Whether to clear previous highlights.
+ * @returns {boolean} - True if the move is valid, otherwise false.
  */
-function highlightMove(position, color, mustBeEmpty = false) {
-    const targetBox = document.getElementById(`b${position}`);
-    if (targetBox) {
-        const targetPiece = targetBox.innerText;
-        if (mustBeEmpty && targetPiece.length > 0) return false;
-
-        if (targetPiece.length > 0) {
-            const pieceColor = targetPiece.charAt(0);
-            const isWhiteTurn = tog % 2 !== 0;
-            const currentColor = isWhiteTurn ? 'w' : 'b';
-
-            if (pieceColor === currentColor) return false; // Prevent landing on a square occupied by own piece
-        }
-
-        targetBox.style.backgroundColor = color;
+function highlightMove(target, color, clear = false) {
+    const box = document.getElementById(`b${target}`);
+    if (box && box.innerText.length === 0) {
+        box.style.backgroundColor = color;
         return true;
+    } else {
+        return false;
     }
-    return false;
 }
 
 /**
- * Highlights a capture move.
+ * Highlights capture moves.
+ * @param {number} target - The target position.
+ * @param {string} color - The highlight color.
  */
-function highlightCapture(position, color) {
-    const targetBox = document.getElementById(`b${position}`);
-    if (targetBox && targetBox.innerText.length > 0) {
-        targetBox.style.backgroundColor = color;
+function highlightCapture(target, color) {
+    const box = document.getElementById(`b${target}`);
+    if (box && box.innerText.length !== 0) {
+        box.style.backgroundColor = color;
     }
 }
+
+/**
+ * Function to toggle between White's turn and Black's turn.
+ */
+function whosTurn() {
+    if (tog % 2 !== 0) {
+        turnIndicatorElement.innerText = "White's turn";
+    } else {
+        turnIndicatorElement.innerText = "Black's turn";
+    }
+}
+
+// Initialize the turn indicator
+whosTurn();
