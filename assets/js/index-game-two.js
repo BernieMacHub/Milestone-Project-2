@@ -1,4 +1,4 @@
-/ *jshint esversion 6 */
+/* jshint esversion: 6 */
 
 let tog = 1;
 let p1sum = 0;
