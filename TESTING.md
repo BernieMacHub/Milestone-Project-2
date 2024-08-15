@@ -47,20 +47,18 @@
 ### W3 Jigsaw - CSS
 
 - [Style CSS](documentation/images/w3-jigsaw-style.png) - CSS for All pages.
-- No Errors or issues
-- Warnings have been ignored, no impact on website functionality.
+No Errors or issues
+Warnings have been ignored, no impact on website functionality.
 
 - [Game one CSS](documentation/images/w3-jigsaw-game-one.png) - CSS for Game one.
-- No Errors or issues
-- Warnings have been ignored, no impact on website functionality.
+No Errors or issues
+Warnings have been ignored, no impact on website functionality.
 
 - [Game two CSS](documentation/images/w3-jigsaw-game-two.png) - CSS for Game two.
-- Issue and Resolution.
-- No Errors or issues
+No Errors or issues
 
 - [Game three CSS](documentation/images/w3-jigsaw-game-three.png)  - CSS for Game three.
-- Issue and Resolution.
-- No Errors or issues
+No Errors or issues
 
 ### JShint - Javascript
 
@@ -192,3 +190,5 @@ After many attempts to complete the chess game, i have decided to leave the rest
 
 - **Bug 2:** Chess game doesnt reset properly after a player wins.
   - **Fix:** No permenant fix has been implemented as of yet, temporary workaround has been added to allow players to reset the board peices upon clicking restart.
+
+  see [Additional Notes for Manual Testing](#additional-notes-for-manual-testing) for further information on bugs found.
