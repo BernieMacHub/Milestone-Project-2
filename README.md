@@ -120,6 +120,8 @@ To deploy the project locally:
 
 ## Credits
 
+- **Canva** - Used to create all the images, videos and other media used across the site.
+
 - **YouTube** - Various tutorials and walkthroughs helped in understanding game development concepts and JavaScript code snippets. Some valuable channels include:
   - [Traversy Media](https://www.youtube.com/user/TechGuyWeb) - Offers comprehensive tutorials on JavaScript and game development.
   - [The Net Ninja](https://www.youtube.com/channel/UCW5YeuERMmlnqo4oq8vwUpg) - Provides in-depth series on JavaScript and front-end development.
