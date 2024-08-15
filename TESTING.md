@@ -114,7 +114,9 @@
 - **Test:** Tested all completed games to make sure all functions are working correctly.
 - **Result:** All Games are functional and working correctly (The Chess game is still underdevelopment and doesnt have any form of winning message or scoreboard functionality at this point)."
 
-### Index, Games, Contact, Response Pages and other universal links
+### Further breakdown of Testing
+
+#### Index, Games, Contact, Response Pages and other universal links
 
 | Feature                  | Expectation                              | Test Performed                          | Outcome                              |
 | ------------------------ | ---------------------------------------- | --------------------------------------- | ------------------------------------ |
@@ -133,31 +135,35 @@
 | GitHub Link              | Redirects users to GitHub                | Clicked the GitHub Icon                 | Expectation Acheived                 |
 
 
-### Noughts and Crosses 
+#### Noughts and Crosses 
 | Feature                  | Expectation                              | Test Performed                          | Outcome                              |
 | ------------------------ | ---------------------------------------- | --------------------------------------- | ------------------------------------ |
 | Game 1 Grid Squares      | Marks Noughts or Crosses on the Board    | Clicked Several Sqaures                 | Expectation Acheived                 |
+| Play another Round       | Resets the board without altering scores | Click the winning message button        | Expectation Acheived                 |
 | Scoreboard               | Updates the Scores after each win        | Won a game as either Noughts or Crosses | Expectation Acheived                 |
 | Reset the Scoreboard     | Resets the scoreboard                    | Clicked the reset Scoreboard Button     | Expectation Acheived                 |
 
-### Snakes and Ladders
+#### Snakes and Ladders
 | Feature                  | Expectation                              | Test Performed                          | Outcome                              |
 | ------------------------ | ---------------------------------------- | --------------------------------------- | ------------------------------------ |
 | Game 2 Roll Dice         | Moves the marker Pieces on the Board     | Clicked Roll Dice several times         | Expectation Acheived                 |
+| Play another Round       | Resets the board without altering scores | Click the winning message button        | Expectation Acheived                 |
 | Game 2 Go to Scoreboard  | Moves the screen focus to the scoreboard | Clicked the Go to Scoreboard Button     | Expectation Acheived                 |
 | Scoreboard               | Updates the Scores after each win        | Won a game as either Red or Blue        | Expectation Acheived                 |
 | Reset the Scoreboard     | Resets the scoreboard                    | Clicked the reset Scoreboard Button     | Expectation Acheived                 |
 
-### Chess
+#### Chess
 | Feature                  | Expectation                              | Test Performed                          | Outcome                              |
 | ------------------------ | ---------------------------------------- | --------------------------------------- | ------------------------------------ |
 | Game 3 Chess Piece Paths | Shows possible player movements in Green | Clicked Several Chess Pieces            | Expectation Acheived                 |
 | Game 3 Chess Piece Moves | Move Chess Pieces around the board       | Clicked one of the green path squares   | Expectation Acheived                 |
+| Play another Round       | Resets the board without altering scores | Click the winning message button        | Failed to reload Chess Pieces        |
+| Restart (replaces above) | Resets the board                         | Click the winning message button        | Expectation Acheived                 |
 | Scoreboard               | Updates the Scores after each win        | Won a game as either Blacks or Whites   | Expectation Acheived                 |
-| Reset the Scoreboard     | Resets the scoreboard                    | Clicked the reset Scoreboard Button     | Failed to reload Chess Pieces        |
+| Reset the Scoreboard     | Resets the scoreboard                    | Clicked the reset Scoreboard Button     | Expectation Acheived                 |
 
 #### Additional Notes for Manual Testing
-
+After many attempts to complete the chess game, i have decided to leave the rest to further development. The main issue i had was getting the chess peices to reappear in their original positions on the board and unfortunately still have not found the solution. A temporary solution was to hide the scoreboard and reset scoreboard button, i edited the function to just reload the webpage when a player clicks restart on the winning message. My original Javascript for the chess game has been put into test.js to allow for further development to rectify the code issue.
 
 
 ### Browser Compatibility
