@@ -114,6 +114,52 @@
 - **Test:** Tested all completed games to make sure all functions are working correctly.
 - **Result:** All Games are functional and working correctly (The Chess game is still underdevelopment and doesnt have any form of winning message or scoreboard functionality at this point)."
 
+### Index, Games, Contact, Response Pages and other universal links
+
+| Feature                  | Expectation                              | Test Performed                          | Outcome                              |
+| ------------------------ | ---------------------------------------- | --------------------------------------- | ------------------------------------ |
+| CMG Title                | Redirects users to the Home page         | Clicked the Title                       | Expectation Acheived                 |
+| Home Nav Link            | Redirects users to the Home page         | Clicked the Home Button                 | Expectation Acheived                 |
+| Games Nav Link           | Redirects users to the Games page        | Clicked the Games Button                | Expectation Acheived                 |
+| Contact us Nav Link      | Redirects users to the Contact us page   | Clicked the Contact us Button           | Expectation Acheived                 |
+| See Games Button         | Redirects users to the Games page        | Clicked the Contact us Button           | Expectation Acheived                 |
+| Play Game 1 Button       | Redirects users to Noughts and Crosses   | Clicked the Play Game Button            | Expectation Acheived                 |
+| Play Game 2 Button       | Redirects users to Snakes and Ladders    | Clicked the Play Game Button            | Expectation Acheived                 |
+| Play Game 3 Button       | Redirects users to Chess                 | Clicked the Play Game Button            | Expectation Acheived                 |
+| Submit form Button       | Redirects users to the response page     | Clicked the Sibmit Button               | Expectation Acheived                 |
+| Email Link               | Redirects users to their email platform  | Clicked the email Link                  | Expectation Acheived                 |
+| Facebook Link            | Redirects users to Facebook              | Clicked the Facebook Icon               | Expectation Acheived                 |
+| Linkedin Link            | Redirects users to Linkedin              | Clicked the Linkedin Icon               | Expectation Acheived                 |
+| GitHub Link              | Redirects users to GitHub                | Clicked the GitHub Icon                 | Expectation Acheived                 |
+
+
+### Noughts and Crosses 
+| Feature                  | Expectation                              | Test Performed                          | Outcome                              |
+| ------------------------ | ---------------------------------------- | --------------------------------------- | ------------------------------------ |
+| Game 1 Grid Squares      | Marks Noughts or Crosses on the Board    | Clicked Several Sqaures                 | Expectation Acheived                 |
+| Scoreboard               | Updates the Scores after each win        | Won a game as either Noughts or Crosses | Expectation Acheived                 |
+| Reset the Scoreboard     | Resets the scoreboard                    | Clicked the reset Scoreboard Button     | Expectation Acheived                 |
+
+### Snakes and Ladders
+| Feature                  | Expectation                              | Test Performed                          | Outcome                              |
+| ------------------------ | ---------------------------------------- | --------------------------------------- | ------------------------------------ |
+| Game 2 Roll Dice         | Moves the marker Pieces on the Board     | Clicked Roll Dice several times         | Expectation Acheived                 |
+| Game 2 Go to Scoreboard  | Moves the screen focus to the scoreboard | Clicked the Go to Scoreboard Button     | Expectation Acheived                 |
+| Scoreboard               | Updates the Scores after each win        | Won a game as either Red or Blue        | Expectation Acheived                 |
+| Reset the Scoreboard     | Resets the scoreboard                    | Clicked the reset Scoreboard Button     | Expectation Acheived                 |
+
+### Chess
+| Feature                  | Expectation                              | Test Performed                          | Outcome                              |
+| ------------------------ | ---------------------------------------- | --------------------------------------- | ------------------------------------ |
+| Game 3 Chess Piece Paths | Shows possible player movements in Green | Clicked Several Chess Pieces            | Expectation Acheived                 |
+| Game 3 Chess Piece Moves | Move Chess Pieces around the board       | Clicked one of the green path squares   | Expectation Acheived                 |
+| Scoreboard               | Updates the Scores after each win        | Won a game as either Blacks or Whites   | Expectation Acheived                 |
+| Reset the Scoreboard     | Resets the scoreboard                    | Clicked the reset Scoreboard Button     | Failed to reload Chess Pieces        |
+
+#### Additional Notes for Manual Testing
+
+
+
 ### Browser Compatibility
 
 - The website was tested on the following browsers:
