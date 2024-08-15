@@ -1,9 +1,8 @@
 # Milestone Project 2 - [Captain Mac Games]
 
-![Responsive-Image](documentation/images/cmg-responsive-mockup.PNG)
+![Responsive-Image](documentation/images/cmg-responsive-mockup.png)
 
 ---
-
 
 ## Table of Contents
 1. [Overview](#overview)
@@ -53,15 +52,19 @@ Imagery is used to just decorate the games themselves, such as an image for the 
 
 - **Noughts and Crosses Game:**  
   This classic game, also known as Tic-Tac-Toe, allows users to play against either the computer or another player. The game features a clean, intuitive interface where users place their Xs and Os on a 3x3 grid. The game tracks wins, losses, and draws, providing immediate feedback on the game outcome and ensuring an engaging experience for players of all ages.
+  [Image]
 
 - **Snakes and Ladders Game:**  
   The Snakes and Ladders game brings this timeless board game to the digital realm. Players roll dice to advance their tokens across a virtual board. The game includes colorful graphics and animations that make moving up ladders and sliding down snakes visually appealing. The game keeps track of player progress and provides a simple, enjoyable way to experience this classic game online.
+  [Image]
 
 - **Chess Game:**  
   The chess game offers a fully functional chessboard where users can play against the computer or another player. It includes features such as move highlighting, piece capturing, and a basic AI opponent for solo play. The game follows traditional chess rules and provides a strategic challenge for players of varying skill levels.
+  [Image]
 
 - **Scoreboards:**  
   The site includes dynamic scoreboards that display player rankings and game scores. These scoreboards provide users with a competitive edge by showcasing the highest scores and recent achievements across the different games. The scoreboards are updated in real-time and are designed to encourage users to improve their performance and climb the leaderboard.
+  [Image]
 
 ### Features Left to Implement
 
@@ -82,6 +85,9 @@ Imagery is used to just decorate the games themselves, such as an image for the 
 - Alt tags added to all images, even the ones used within the game. 
 
 ## Technologies Used
+- [html](path) - Used to structure the website.
+- [css](path) - Used to style the website.
+- [javascript](path) - Used to make the website interactive.
 - [VSCode](https://code.visualstudio.com/) - IDE of choice for the site.
 - [Git](https://git-scm.com/) - For version control.
 - [GitHub](https://github.com/) - To store all files relating to the project.
@@ -109,7 +115,7 @@ The project was deployed using GitHub Pages. The steps to deploy are as follows:
 
 ### Local Deployment
 To deploy the project locally:
-1. Clone the repository using the following command:  
+1. Clone the repository using the following command:  git clone https://github.com/BernieMacHub/Milestone-Project-2.git
 2. Open the `index.html` file in a browser to view the project.
 
 ## Credits

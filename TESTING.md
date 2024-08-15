@@ -1,11 +1,11 @@
 # Testing
 
-![Responsive-Image](documentation/images/cmg-responsive-mockup.PNG)
+![Responsive-Image](documentation/images/cmg-responsive-mockup.png)
 
 ---
 ## Table of Contents
 
-- [Automated Testing](#automated-testing)
+- [Code Validation](#code-validation)
 
   - [W3 Validator - HTML](#w3-validator---html)
   - [W3 Jigsaw - CSS](#w3-jigsaw---css)
@@ -30,35 +30,35 @@
 
     ***
 
-## Automated Testing - Code Validation
+## Code Validation
 
 ### W3 Validator - HTML
 
 [W3C Validator](https://validator.w3.org/) has been used to ensure the validity of the HTML markup across the project.
 
-- [Index/Home](documentation/images/w3-index.PNG) - No Errors or warnings.
-- [Game one](documentation/images/w3-game-one.PNG) - No Errors or warnings.
-- [Game two](documentation/images/w3-game-two.PNG) - No Errors or warnings.
-- [Game three](documentation/images/w3-game-three.PNG) - No Errors or warnings.
-- [games](documentation/images/w3-games.PNG) - No Errors or warnings.
-- [Contact form](documentation/images/w3-contact-form.PNG) - No Errors or warnings.
-- [Contact response](documentation/images/w3-response.PNG) - No Errors or warnings.
+- [Index/Home](documentation/images/w3-index.png) - No Errors or warnings.
+- [Game one](documentation/images/w3-game-one.png) - No Errors or warnings.
+- [Game two](documentation/images/w3-game-two.png) - No Errors or warnings.
+- [Game three](documentation/images/w3-game-three.png) - No Errors or warnings.
+- [games](documentation/images/w3-games.png) - No Errors or warnings.
+- [Contact form](documentation/images/w3-contact-form.png) - No Errors or warnings.
+- [Contact response](documentation/images/w3-response.png) - No Errors or warnings.
 
 ### W3 Jigsaw - CSS
 
-- [Style CSS](documentation/images/w3-jigsaw-style.PNG) - CSS for All pages.
+- [Style CSS](documentation/images/w3-jigsaw-style.png) - CSS for All pages.
 - No Errors or issues
 - Warnings have been ignored, no impact on website functionality.
 
-- [Game one CSS](documentation/images/w3-jigsaw-game-one.PNG) - CSS for Game one.
+- [Game one CSS](documentation/images/w3-jigsaw-game-one.png) - CSS for Game one.
 - No Errors or issues
 - Warnings have been ignored, no impact on website functionality.
 
-- [Game two CSS](documentation/images/w3-jigsaw-game-two.PNG) - CSS for Game two.
+- [Game two CSS](documentation/images/w3-jigsaw-game-two.png) - CSS for Game two.
 - Issue and Resolution.
 - No Errors or issues
 
-- [Game three CSS](documentation/images/w3-jigsaw-game-three.PNG)  - CSS for Game three.
+- [Game three CSS](documentation/images/w3-jigsaw-game-three.png)  - CSS for Game three.
 - Issue and Resolution.
 - No Errors or issues
 
@@ -66,11 +66,11 @@
 
 [JSHint](https://jshint.com/) has been used to validate my JavaScript.
 
-[JSHint - game one](documentation/images/jshint-game-one.PNG) - Passed with No errors, warnings ignored due to it having no effect on the games perfomance.
+[JSHint - game one](documentation/images/jshint-game-one.png) - Passed with No errors, warnings ignored due to it having no effect on the games perfomance.
 
-[JSHint - game two](documentation/images/jshint-game-two.PNG) - Passed with No errors, warnings ignored due to it having no effect on the games perfomance.
+[JSHint - game two](documentation/images/jshint-game-two.png) - Passed with No errors, warnings ignored due to it having no effect on the games perfomance.
 
-[JSHint - game three](documentation/images/jshint-game-three.PNG) - Passed with No errors or warnings.
+[JSHint - game three](documentation/images/jshint-game-three.png) - Passed with No errors or warnings.
 
 - Most warnings are relating to Unused variables which are of no consequence to the websites overall performance.
 
@@ -86,7 +86,7 @@
 
 [Game 1 Page](documentation/images/lh-game-one.png)
 
-[Game 2 Page](documentation/images/lh-game-two.PNG)
+[Game 2 Page](documentation/images/lh-game-two.png)
 
 [Game 3 Page](documentation/images/lh-game-three.png)
 
@@ -139,4 +139,4 @@
   - **Fix:** It was a simple case of offsetting the marker in the CSS to display them stacked on top of one another.
 
 - **Bug 2:** Chess game doesnt reset properly after a player wins.
-  - **Fix:** No permenant fix has been implemented as of yet, temporary workaround has been added to allow players to reset the board peices.
+  - **Fix:** No permenant fix has been implemented as of yet, temporary workaround has been added to allow players to reset the board peices upon clicking restart.
